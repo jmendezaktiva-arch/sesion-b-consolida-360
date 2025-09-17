@@ -17,9 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const section = document.createElement('section');
         section.classList.add('slide-section'); // Clase para estilos generales si los hay
 
-        if (slideData.layout) {
-            section.classList.add(slideData.layout);
-        }
+if (slideData.layout) {
+    // Divide la cadena por espacios y añade cada clase por separado
+    slideData.layout.split(' ').forEach(cls => section.classList.add(cls));
+}
 
         // Título
         if (slideData.title) {
