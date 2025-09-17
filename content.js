@@ -5,14 +5,22 @@ const slideContent = [
   {
     layout: 'layout-center-focus',
     title: '¡Bienvenidos a Consolidación 360°!',
-    subtitle: 'Juntos construimos tu ruta digital en acción.'
+    subtitle: 'Juntos construimos tu ruta digital en acción.',
+    image: {
+      src: 'slide-1.png',
+      alt: 'Portada de Bienvenida a Consolidación 360'
+    }
   },
   
-  // Lámina 2: Nuestra Esencia
+  // Lámina 2: Nuestra Esencia (dos columnas, imagen a la izquierda)
   {
-    layout: 'layout-center-focus',
+    layout: 'layout-two-columns', // Layout actualizado para dos columnas
     title: 'Mi Empresa Crece: Nuestra Esencia',
-    subtitle: 'Teorema, Metodología y Valor'
+    subtitle: 'Teorema, Metodología y Valor',
+    image: {
+      src: 'Slide-2.png',
+      alt: 'Diagrama de la esencia de Mi Empresa Crece'
+    }
   },
 
   // Lámina 3: Programa de Transformación
@@ -36,34 +44,50 @@ const slideContent = [
     subtitle: 'Fomentando la Responsabilidad y el Compromiso'
   },
 
-  // Lámina 6: Objetivos de Hoy
+  // Lámina 6: Objetivos de Hoy (dos columnas, imagen a la izquierda)
   {
-    layout: 'layout-center-focus',
+    layout: 'layout-two-columns', // Layout actualizado para dos columnas
     title: 'Objetivos de Hoy: Tu Camino al Éxito',
-    subtitle: 'De la Estrategia al Plan'
+    subtitle: 'De la Estrategia al Plan',
+    image: {
+      src: 'slide-6.png',
+      alt: 'Iconos representando los objetivos de la sesión'
+    }
   },
 
-  // Lámina 7: Mapa de Conceptos
+  // Lámina 7: Mapa de Conceptos (centrado, imagen debajo)
   {
     layout: 'layout-center-focus',
     title: 'El Mapa de Conceptos',
-    subtitle: 'Anclas para tu Ecosistema de Ventas Digitales'
+    subtitle: 'Anclas para tu Ecosistema de Ventas Digitales',
+    image: {
+      src: 'slide-7.png',
+      alt: 'Infografía del mapa de conceptos clave'
+    }
   },
 
-  // Lámina 8: Ecosistema de Ventas Digitales
+  // Lámina 8: Ecosistema de Ventas Digitales (centrado, imagen debajo)
   {
     layout: 'layout-center-focus',
     title: '¿Qué es el Ecosistema de Ventas Digitales?',
-    subtitle: 'La orquesta de canales que trabajan para ti'
+    subtitle: 'La orquesta de canales que trabajan para ti',
+    image: {
+      src: 'slide-8.png',
+      alt: 'Diagrama del ecosistema de ventas digitales'
+    }
   },
  
-  // Lámina 9: Ruta de Implementación
+  // Lámina 9: Ruta de Implementación (centrado, imagen debajo)
   {
     layout: 'layout-center-focus',
     title: 'Nuestra Ruta de Implementación',
-    subtitle: 'El Flujo Consultivo para la acción'
+    subtitle: 'El Flujo Consultivo para la acción',
+    image: {
+      src: 'slide-9.png',
+      alt: 'Diagrama de flujo de la ruta de implementación'
+    }
   },
- 
+
   // --- SERIE DE EJERCICIOS ---
   {
     layout: 'layout-center-focus',
