@@ -1,66 +1,70 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const slidesContainer = document.querySelector('.slides');
+// main.js
 
-    slideContent.forEach(slideData => {
-        const slide = document.createElement('section');
-        slide.className = slideData.layout || 'layout-default';
-
-        if (slideData.background) {
-            // Comprueba si el fondo es una ruta de imagen (contiene .jpeg, .jpg, .png, .gif) o una URL
-            if (slideData.background.includes('.jpeg') || slideData.background.includes('.jpg') || slideData.background.includes('.png') || slideData.background.startsWith('http')) {
-                slide.setAttribute('data-background-image', slideData.background);
-            } else {
-                // Si no es una imagen, lo trata como un color
-                slide.setAttribute('data-background-color', slideData.background);
-            }
-        }
-
-        let innerHTML = '';
-        let titleStyle = slideData.titleColor ? `style="color:${slideData.titleColor}"` : '';
-        if (slideData.title) {
-            innerHTML += `<h1 ${titleStyle}>${slideData.title}</h1>`;
-        }
-        if (slideData.subtitle) {
-            innerHTML += `<h3>${slideData.subtitle}</h3>`;
-        }
-
-        // --- LÓGICA DE CONTENIDO MEJORADA ---
-        let mainContent = slideData.content || '';
-        let imageContent = '';
-
-        if (slideData.layout === 'layout-split') {
-            const textDiv = `<div>${mainContent}</div>`;
-            let imageDiv = '<div>';
-            if (slideData.image) {
-                // Para la diapositiva de facilitadores, aplicamos una clase especial
-                const imgClass = slideData.title === 'Sus Guías en este Viaje' ? 'facilitator-photo' : '';
-                imageDiv += `<img src="${slideData.image}" alt="${slideData.title}" class="${imgClass}">`;
-            }
-            if (slideData.image2) {
-                const imgClass = slideData.title === 'Sus Guías en este Viaje' ? 'facilitator-photo' : '';
-                imageDiv += `<img src="${slideData.image2}" alt="${slideData.title}" class="${imgClass}">`;
-            }
-            imageDiv += '</div>';
-            innerHTML += `<div class="content-wrapper">${textDiv}${imageDiv}</div>`;
-        
-        } else {
-            innerHTML += mainContent;
-            if (slideData.image) {
-                imageContent = `<img src="${slideData.image}" alt="${slideData.title}">`;
-                innerHTML += imageContent;
-            }
-        }
-        
-        slide.innerHTML = innerHTML;
-        slidesContainer.appendChild(slide);
+document.addEventListener('DOMContentLoaded', () => {
+    // Inicializa Reveal.js
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
     });
 
-    Reveal.initialize({
-        hash: true,
-        slideNumber: 'c/t',
-        width: 1280,
-        height: 720,
-        margin: 0.04,
-        plugins: [ RevealNotes ]
+    const slidesContainer = document.querySelector('.slides');
+
+    slideContent.forEach((slideData, index) => {
+        const section = document.createElement('section');
+        section.classList.add('slide-section'); // Clase para estilos generales si los hay
+
+        if (slideData.layout) {
+            section.classList.add(slideData.layout);
+        }
+
+        // Título
+        if (slideData.title) {
+            const h2 = document.createElement('h2');
+            h2.textContent = slideData.title;
+            section.appendChild(h2);
+        }
+
+        // Subtítulo
+        if (slideData.subtitle) {
+            const p = document.createElement('p');
+            p.textContent = slideData.subtitle;
+            section.appendChild(p);
+        }
+
+        // **MODIFICACIÓN CLAVE AQUÍ PARA LA IMAGEN**
+        if (slideData.image) {
+            const img = document.createElement('img');
+            // Si slideData.image es un string (URL directa), úsala.
+            // Si es un objeto, accede a slideData.image.src.
+            if (typeof slideData.image === 'string') {
+                img.src = slideData.image;
+                img.alt = `Imagen de la diapositiva ${index + 1}`; // Alt genérico si la URL es directa
+            } else if (typeof slideData.image === 'object' && slideData.image.src) {
+                img.src = slideData.image.src;
+                img.alt = slideData.image.alt || `Imagen de la diapositiva ${index + 1}`;
+            }
+            
+            // Añadir una clase para que puedas estilizar las imágenes si es necesario
+            img.classList.add('slide-image'); 
+            section.appendChild(img);
+        }
+        // **FIN DE LA MODIFICACIÓN CLAVE**
+
+        // Si hay una lista de puntos, agrégala (asumo que slideData.points podría existir)
+        if (slideData.points && Array.isArray(slideData.points)) {
+            const ul = document.createElement('ul');
+            slideData.points.forEach(point => {
+                const li = document.createElement('li');
+                li.textContent = point;
+                ul.appendChild(li);
+            });
+            section.appendChild(ul);
+        }
+
+        slidesContainer.appendChild(section);
     });
 });
