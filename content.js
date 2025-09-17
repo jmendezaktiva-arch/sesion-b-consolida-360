@@ -8,7 +8,6 @@ const slideContent = [
     subtitle: 'Juntos construimos tu ruta digital en acción.',
     image: {
       src: 'assets/images/slide-1.png', // RUTA CORREGIDA: Usando el nombre real de tu archivo
-      alt: 'Portada de Bienvenida a Consolidación 360'
     }
   },
   
@@ -19,7 +18,6 @@ const slideContent = [
     subtitle: 'Teorema, Metodología y Valor',
     image: {
       src: 'assets/images/slide-2.png', // RUTA CORREGIDA: Usando el nombre real de tu archivo
-      alt: 'Diagrama de la esencia de Mi Empresa Crece'
     }
   },
 
@@ -51,7 +49,6 @@ const slideContent = [
     subtitle: 'De la Estrategia al Plan',
     image: {
       src: 'assets/images/slide-6.png', // RUTA CORREGIDA: Usando el nombre real de tu archivo
-      alt: 'Iconos representando los objetivos de la sesión'
     }
   },
 
@@ -62,7 +59,6 @@ const slideContent = [
     subtitle: 'Anclas para tu Ecosistema de Ventas Digitales',
     image: {
       src: 'assets/images/slide-7.png', // RUTA CORREGIDA: Usando el nombre real de tu archivo
-      alt: 'Infografía del mapa de conceptos clave'
     }
   },
 
@@ -73,7 +69,6 @@ const slideContent = [
     subtitle: 'La orquesta de canales que trabajan para ti',
     image: {
       src: 'assets/images/slide-8.png', // RUTA CORREGIDA: Usando el nombre real de tu archivo
-      alt: 'Diagrama del ecosistema de ventas digitales'
     }
   },
  
@@ -84,7 +79,6 @@ const slideContent = [
     subtitle: 'El Flujo Consultivo para la acción',
     image: {
       src: 'assets/images/slide-9.png', // RUTA CORREGIDA: Usando el nombre real de tu archivo
-      alt: 'Diagrama de flujo de la ruta de implementación'
     }
   },
 
