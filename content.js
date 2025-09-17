@@ -7,7 +7,7 @@ const slideContent = [
     title: '¡Bienvenidos a Consolidación 360°!',
     subtitle: 'Juntos construimos tu ruta digital en acción.',
     image: {
-      src: 'slide-1.png',
+      src: 'assets/images/slide-1.png',
       alt: 'Portada de Bienvenida a Consolidación 360'
     }
   },
@@ -18,7 +18,7 @@ const slideContent = [
     title: 'Mi Empresa Crece: Nuestra Esencia',
     subtitle: 'Teorema, Metodología y Valor',
     image: {
-      src: 'Slide-2.png',
+      src: 'assets/images/Slide-2.png',
       alt: 'Diagrama de la esencia de Mi Empresa Crece'
     }
   },
@@ -27,21 +27,36 @@ const slideContent = [
   {
     layout: 'layout-infographic',
     title: 'Tu Programa de Transformación',
-    subtitle: 'Los 3 Pilares de tu Consolidación'
+    content: `<div class="icon-grid">
+                <div class="icon-item"><i class="fas fa-users"></i><p>Equipo</p></div>
+                <div class="connector">&rarr;</div>
+                <div class="icon-item"><i class="fas fa-chart-line icon-highlight"></i><p><strong>Ventas</strong></p></div>
+                <div class="connector">&rarr;</div>
+                <div class="icon-item"><i class="fas fa-coins"></i><p>Inversión</p></div>
+              </div>`
   },
+
 
   // Lámina 4: Sus Guías
   {
-    layout: 'layout-center-focus',
+    layout: 'layout-split',
     title: 'Sus Guías en este Viaje',
-    subtitle: 'Aliados en tu Estrategia'
+    content: '<p><strong>Expertos dedicados a la implementación.</strong></p><div class="session-flow-text">Sesión Grupal &rarr; Implementación &rarr; Sesión Individual &rarr; Ajuste</div>',
+    image: 'assets/images/slide-4.jpeg',
+    image2: 'assets/images/slide-4.png'
   },
 
   // Lámina 5: Reglas del Juego
   {
     layout: 'layout-default slide-5-custom',
     title: 'Reglas del Juego y Dinámica',
-    subtitle: 'Fomentando la Responsabilidad y el Compromiso'
+    content: `<p>Establecer un marco de Responsabilidad y compromiso. No son reglas, son los <strong>cimientos para construir juntos</strong>.</p>
+              <ul class="infographic-list">
+                <li><i class="fas fa-video"></i> <div><strong>Cámara encendida = Compromiso</strong><br>Estar presente y conectado con el grupo.</div></li>
+                <li><i class="fas fa-microphone-lines"></i> <div><strong>Participación activa = Proactividad</strong><br>Tu aprendizaje depende de tu involucramiento.</div></li>
+                <li><i class="fas fa-lightbulb"></i> <div><strong>Mente abierta = Crecimiento</strong><br>Dispuesto a desaprender y adoptar nuevos métodos.</div></li>
+                <li><i class="fas fa-clock"></i> <div><strong>Puntualidad = Respeto</strong><br>Valoramos tu tiempo y el de los demás.</div></li>
+              </ul>`
   },
 
   // Lámina 6: Objetivos de Hoy (dos columnas, imagen a la izquierda)
@@ -50,7 +65,7 @@ const slideContent = [
     title: 'Objetivos de Hoy: Tu Camino al Éxito',
     subtitle: 'De la Estrategia al Plan',
     image: {
-      src: 'slide-6.png',
+      src: 'assets/images/slide-6.png',
       alt: 'Iconos representando los objetivos de la sesión'
     }
   },
@@ -61,7 +76,7 @@ const slideContent = [
     title: 'El Mapa de Conceptos',
     subtitle: 'Anclas para tu Ecosistema de Ventas Digitales',
     image: {
-      src: 'slide-7.png',
+      src: 'assets/images/slide-7.png',
       alt: 'Infografía del mapa de conceptos clave'
     }
   },
@@ -72,7 +87,7 @@ const slideContent = [
     title: '¿Qué es el Ecosistema de Ventas Digitales?',
     subtitle: 'La orquesta de canales que trabajan para ti',
     image: {
-      src: 'slide-8.png',
+      src: 'assets/images/slide-8.png',
       alt: 'Diagrama del ecosistema de ventas digitales'
     }
   },
@@ -83,7 +98,7 @@ const slideContent = [
     title: 'Nuestra Ruta de Implementación',
     subtitle: 'El Flujo Consultivo para la acción',
     image: {
-      src: 'slide-9.png',
+      src: 'assets/images/slide-9.png',
       alt: 'Diagrama de flujo de la ruta de implementación'
     }
   },
