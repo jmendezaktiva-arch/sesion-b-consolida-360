@@ -148,4 +148,6 @@ const slideContent = [
     title: '¡No te quedes con dudas! Contáctanos para más información.',
     subtitle: 'Gracias por participar'
   }
+
+  
 ];
