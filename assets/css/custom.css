@@ -180,7 +180,7 @@
 .reveal .slides { position: relative; }
 
 .company-logo {
-  position: absolute;
+  position: static;
   top: 20px;
   left: 20px;
   z-index: 101;
