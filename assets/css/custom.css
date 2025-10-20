@@ -1,4 +1,4 @@
-/* Custom CSS v2: Professional look with controlled sizes and spacing */
+/* Custom CSS v2: Profesional, Modular y Universal */
 :root {
     --r-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
     --r-heading-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -12,69 +12,64 @@
 
 /* --- CONTROL GLOBAL DE FUENTES Y ESPACIO --- */
 .reveal {
-    /* Reducimos el tamaño de fuente base */
     font-size: 24px; 
     color: var(--text-color);
 }
 
 /* ========================================================================== */
-/* --- SECCIÓN DE LAYOUT GLOBAL CORREGIDA Y DEFINITIVA --- */
+/* --- LAYOUT GLOBAL Y REGLAS DE FLEXBOX (La base de todo) --- */
 /* ========================================================================== */
 
-/* 1. Contenedor Principal de Diapositiva (LA CORRECCIÓN MÁS IMPORTANTE) */
+/* 1. Contenedor Principal de Diapositiva: Asegura que el contenido fluya verticalmente */
 .reveal .slides section {
     display: flex;
     flex-direction: column;
-    /* CORRECCIÓN: Alineamos el contenido arriba para evitar el corte superior. */
-    justify-content: flex-start; 
+    justify-content: flex-start; /* Alinea el contenido arriba por defecto */
     height: 100%;
     padding: 20px 40px;
     box-sizing: border-box;
-    text-align: center; /* Centramos el texto por defecto */
+    text-align: center;
 }
 
-/* 2. Reglas de Texto (Títulos, etc.) */
-.reveal h1 { 
-    font-size: 2.2em;
-    color: var(--primary-color); 
-    margin-bottom: 15px;
-    flex-shrink: 0; /* NO se encogen */
+/* 2. Reglas de Texto: Los elementos de texto NO se encogen */
+.reveal h1, .reveal h2, .reveal h3, .reveal p, .reveal li, .reveal div {
+    flex-shrink: 0;
 }
-.reveal h2 { 
-    font-size: 1.8em; 
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    flex-shrink: 0; /* NO se encogen */
-}
-.reveal h3 { font-size: 1.2em; flex-shrink: 0; }
-.reveal p, .reveal li, .reveal div { font-size: 0.9em; flex-shrink: 0; }
+.reveal h1 { font-size: 2.2em; color: var(--primary-color); margin-bottom: 15px; }
+.reveal h2 { font-size: 1.8em; color: var(--primary-color); margin-bottom: 15px; }
+.reveal h3 { font-size: 1.2em; }
+.reveal p, .reveal li, .reveal div { font-size: 0.9em; }
 .reveal strong { color: var(--accent-color); }
 
-/* 3. Regla ÚNICA y Definitiva para Imágenes Principales */
+/* 3. Regla Definitiva para Imágenes Primarias: SE AJUSTA al espacio */
 .reveal .slides section > img {
-    flex-grow: 1;           /* Crece para llenar el espacio vertical restante */
-    flex-shrink: 1;         /* Se encoge si el espacio es limitado */
-    min-height: 0;          /* Parche crucial para que flexbox funcione con imágenes */
-    object-fit: contain;    /* Mantiene la proporción sin deformarse */
+    /* flex-grow: 1; */    /* <-- ELIMINAMOS o comentamos esta línea */
+    flex-shrink: 1;
+    min-height: 0;
+    object-fit: contain;
     display: block;
-    margin: 15px auto 0 auto; /* Margen superior y centra, sin margen inferior */
+    margin: 15px auto 0 auto;
     width: 100%;
+    max-height: 75vh; /* <-- AÑADIMOS ESTA LÍNEA */
 }
 
-.facilitator-photo {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 10px; /* Margen unificado */
-}
+/* --- PLANTILLAS BÁSICAS (ASIGNADAS EN content.js) --- */
 
-/* --- PLANTILLAS DE DISEÑO --- */
+/* 1. layout-default: Alineación Izquierda/Arriba, Contenido y luego Imagen */
 .layout-default { text-align: left; align-items: flex-start; }
-/* ... otras reglas ... */
 
-/* Estilos para el layout de pantalla dividida */
-.layout-split { text-align: left; align-items: center; }
+/* 2. layout-center-focus: Enfoca la frase centralmente */
+.layout-center-focus {
+    justify-content: center !important; /* Centra el contenido verticalmente */
+    text-align: center;
+}
+
+/* 3. layout-split: Contenido + Imagen (50/50) */
+.layout-split { 
+    text-align: left; 
+    align-items: flex-start;
+}
+.layout-split h1 { text-align: center; width: 100%; }
 .layout-split .content-wrapper {
     display: flex;
     align-items: center;
@@ -84,313 +79,117 @@
 }
 .layout-split .content-wrapper > div { flex: 1; } /* Cada mitad ocupa el 50% */
 
-/* 2 & 6. AJUSTE PARA TAMAÑO Y PROPORCIÓN DE IMÁGENES */
-.layout-split .content-wrapper img {
-    max-height: 450px; /* Limita la altura para mantener proporción */
-    width: auto;       /* Ajusta el ancho automáticamente */
-    margin: 0 auto;    /* Centra la imagen en su contenedor */
-    display: block;
-}
-/* --- Estilos específicos para Diapositiva 2 --- */
-.image-container-esencia {
-    display: flex;
-    justify-content: center; /* Centra las imágenes horizontalmente */
-    align-items: center;
-    gap: 40px; /* Espacio entre las dos imágenes */
-    margin-top: 30px; /* Espacio sobre las imágenes */
-    width: 100%;
-}
-/* --- Estilos específicos para Diapositiva 2 (Último Ajuste) --- */
+/* --- PLANTILLAS ESPECIALIZADAS (REFACTORIZADAS) --- */
 
-/* Centra el título en todos los layouts divididos */
-.layout-split h1 {
-    text-align: center;
-    width: 100%;
-}
-
-/* Invierte el orden de las columnas: imagen a la izquierda y texto a la derecha */
-.slide-2-reversed .content-wrapper {
+/* 4. Layout 50/50 Invertido (Reemplaza .slide-2-reversed) */
+.layout-split.reversed .content-wrapper {
     flex-direction: row-reverse;
 }
 
-/* Centra todo el contenido del bloque derecho */
-.right-content-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100%;
-}
-
-/* Estilo para la frase destacada */
-.right-content-wrapper .quote-esencia {
-    margin-top: 25px;
-    font-weight: bold;
-}
-
-/* 3. Reduce y ajusta el tamaño del logo */
-.right-content-wrapper .logo-esencia-small {
-    margin-top: 30px;
-    max-height: 90px;  /* Tamaño pequeño para el logo */
-    width: auto;
-}
-
-/* --- Estilos finales y específicos para Diapositiva 2 (según boceto) --- */
-
-.slide-2-custom-columns {
+/* 5. Layout Dos Columnas de Texto/Imagen (Reemplaza .slide-2-custom-columns) */
+.layout-two-columns {
   display: flex;
-  align-items: center; /* Alinea verticalmente el contenido de las columnas */
+  align-items: center;
   justify-content: center;
-  gap: 40px; /* Espacio entre las dos columnas */
+  gap: 40px;
   width: 100%;
+  margin-top: 20px;
 }
-
-.slide-2-custom-columns .column-left,
-.slide-2-custom-columns .column-right {
-  flex: 1; /* Hace que cada columna ocupe el 50% del espacio disponible */
+.layout-two-columns .column {
+  flex: 1; 
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra el contenido dentro de cada columna */
+  align-items: center;
   justify-content: center;
-}
-
-/* Estilos para el contenido de la columna izquierda */
-.column-left .logo-final {
-  max-height: 130px;
-  width: auto;
-  margin-bottom: 25px;
-}
-.column-left .quote-final {
   text-align: center;
-  font-weight: bold;
-  font-size: 1.1em;
-  border-left: 4px solid var(--accent-color);
-  padding-left: 15px;
 }
+/* Estilos internos para el contenido de estas columnas */
+.layout-two-columns .logo-final { max-height: 130px; margin-bottom: 25px; }
+.layout-two-columns .quote-final { font-weight: bold; font-size: 1.1em; border-left: 4px solid var(--accent-color); padding-left: 15px; text-align: left; }
+.layout-two-columns .image-final { width: 100%; max-height: 350px; object-fit: cover; border-radius: 10px; }
 
-/* Estilo para la imagen de la columna derecha */
-.column-right .image-final {
+/* 6. Layout Tres Columnas (Reemplaza .slide-6-three-columns) */
+.layout-three-columns {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
   width: 100%;
-  max-height: 350px;
-  object-fit: cover; /* Asegura que la imagen llene el espacio sin deformarse */
-  border-radius: 10px;
 }
+.layout-three-columns .column { flex: 1; text-align: left; }
+.layout-three-columns .column img { width: 100%; border-radius: 8px; object-fit: cover; }
+.layout-three-columns ul { padding-left: 20px; margin: 0; }
 
-/* --- Estilos para Diapositiva 3 (Infografía Horizontal) --- */
-.icon-grid {
+/* --- PLANTILLA INFOGRÁFICA Y UTILIDADES (REFACTORIZADAS) --- */
+
+/* Infografía Horizontal (Reemplaza .icon-grid) */
+.horizontal-infographic {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 50px;
   width: 100%;
-  /* Con este margen, empujamos los iconos hacia abajo */
   margin-top: 150px;
 }
+.horizontal-infographic .icon-item i { font-size: 4em; margin-bottom: 15px; }
+.horizontal-infographic .icon-item p { font-size: 1.2em; font-weight: bold; }
+.horizontal-infographic .connector { font-size: 2.5em; }
 
-/* Aumenta el tamaño de los iconos */
-.icon-grid .icon-item i {
-  font-size: 4em;  /* Tamaño de icono incrementado */
-  margin-bottom: 15px;
+/* --- OPCIÓN 3: BLOQUES GEOMÉTRICOS --- */
+/* Un patrón abstracto que simula bloques o segmentos de datos. */
+.reveal {
+    background-color: #FFFFFF;
+    
+    /* Patrón de líneas diagonales o bloques muy claros */
+    background-image: repeating-linear-gradient(
+        45deg, 
+        #F0F0F0, /* Un gris muy tenue */
+        #F0F0F0 1px, 
+        transparent 1px, 
+        transparent 20px
+    );
+    background-size: 20px 20px;
+    opacity: 0.9; /* Hace que el patrón sea aún más sutil */
 }
 
-/* Aumenta el tamaño de los títulos debajo de los iconos */
-.icon-grid .icon-item p {
-  font-size: 1.2em; /* Tamaño de texto incrementado */
-  font-weight: bold;
-}
-
-/* Aumenta el tamaño de las flechas conectoras */
-.icon-grid .connector {
-  font-size: 2.5em;
-}
-
-/* --- Estilos para Diapositiva 6 (Diseño de 3 columnas) --- */
-
-.slide-6-three-columns {
-  display: flex;
-  align-items: flex-start; /* Alinea las columnas en la parte superior */
-  justify-content: center;
-  gap: 30px;               /* Espacio entre las columnas */
-  margin-top: 40px;
-  width: 100%;
-}
-
-.slide-6-three-columns .text-column {
-  flex: 1; /* Asigna espacio igual a las columnas de texto */
-  text-align: left;
-}
-
-.slide-6-three-columns .image-column {
-  flex: 1; /* Asigna espacio igual a la columna de la imagen */
-}
-
-.slide-6-three-columns ul {
-  padding-left: 20px; /* Añade un poco de sangría a las listas */
-  margin: 0;
-}
-
-.slide-6-three-columns .image-column img {
-  width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-/* Centra el título de la diapositiva 6 */
-.slide-6-custom h1 {
-  text-align: center;
-  width: 100%;
-}
-
-/* --- ESTILO PARA EL LOGO FIJO EN LA ESQUINA --- */
-.logo-esquina {
-  position: fixed;            /* Lo fija en la ventana del navegador */
-  top: 25px;                  /* Distancia desde la parte superior */
-  right: 30px;                /* Distancia desde la derecha */
-  z-index: 100;               /* Asegura que esté por encima de todo */
-  opacity: 0.6;               /* Transparencia para que no compita con el título */
-  width: 100px;               /* Ancho sugerido (ver recomendación abajo) */
-  height: auto;               /* Mantiene la proporción */
-}
-
-/* --- Estilos para Diapositiva 5 (Reglas del Juego) --- */
-
-/* CORRECCIÓN: Centra verticalmente todo el contenido de la diapositiva 5 */
-.slide-5-custom {
-  justify-content: center;
-}
-
-/* 1. Centra el título para esta diapositiva específica */
-.slide-5-custom h1 {
-  text-align: center;
-  width: 100%;
-}
-
-.infographic-list {
-  list-style: none; /* Quitamos los puntos de la lista */
+/* Lista de Infografía con Iconos (Reemplaza .infographic-list) */
+.icon-list {
+  list-style: none;
   padding-left: 0;
-  max-width: 80%;   /* Hacemos la lista un poco más angosta */
-  margin: 50px auto 0 auto; /* Margen para separar la lista del párrafo */
+  max-width: 80%;
+  margin: 50px auto 0 auto;
+}
+.icon-list li { display: flex; align-items: center; margin-bottom: 25px; }
+.icon-list i { font-size: 2.5em; color: var(--secondary-color); margin-right: 25px; width: 50px; text-align: center; }
+
+/* --- CLASES DE UTILIDAD --- */
+
+/* Clases de Estilo de Componente (Usado en content.js) */
+.highlight-quote { margin-top: 40px; font-style: italic; border-left: 4px solid var(--accent-color); padding-left: 15px; }
+.session-flow-text { text-align: center; margin-top: 40px; font-size: 1.2em; font-weight: bold; }
+.icon-highlight { color: var(--accent-color); }
+.no-style-list { list-style: none; padding-left: 0; }
+.facilitator-photo { width: 250px; height: 250px; border-radius: 50%; object-fit: cover; margin: 10px; }
+
+/* Clases de Ajuste Fino */
+.h1-centered h1 { text-align: center; width: 100%; } /* Para centrar el h1 en layouts por defecto */
+
+/* --- LOGO FIJO EN ESQUINA --- */
+
+.reveal .slides { position: relative; }
+
+.company-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 101;
+  width: 80px;
+  height: auto;
+  opacity: 0.7;
 }
 
-/* 3. Coloca el icono antes del texto y los alinea */
-.infographic-list li {
-  display: flex;
-  align-items: center; /* Alinea icono y texto verticalmente */
-  margin-bottom: 25px; /* Espacio entre cada regla */
-}
-
-/* 2. Incrementa el tamaño de los iconos y les da color */
-.infographic-list i {
-  font-size: 2.5em; /* Iconos más grandes */
-  color: var(--secondary-color); /* Usamos un color del tema */
-  margin-right: 25px; /* Espacio entre el icono y el texto */
-  width: 50px;
-  text-align: center;
-}
-
-/* Centra el título de la diapositiva 19 */
-.slide-19-custom h1 {
-  text-align: center;
-  width: 100%;
-}
-
-/* --- ANÁLISIS A CONCIENCIA: REGLAS DEFINITIVAS DE LAYOUT --- */
-
-/* 1. Elementos de texto (títulos, párrafos, etc.) ocupan su espacio
-      natural y NO se encogen. Tienen prioridad. */
-.reveal .slides section > h1,
-.reveal .slides section > h2,
-.reveal .slides section > h3,
-.reveal .slides section > p,
-.reveal .slides section > ul,
-.reveal .slides section > div {
-    flex-shrink: 0;
-}
-
-/* 2. La imagen principal es flexible: crece para llenar el espacio
-      restante y se encoge si es necesario, adaptándose al contenido. */
-.reveal .slides section > img {
-    flex-grow: 1;           /* Permite que la imagen CREZCA para llenar el espacio vertical */
-    flex-shrink: 1;         /* Permite que la imagen SE ENCOJA si el espacio es limitado */
-    min-height: 0;          /* Parche crucial para que flexbox funcione bien con imágenes */
-    object-fit: contain;    /* Mantiene la proporción de la imagen sin deformarla */
-    display: block;
-    margin-top: 15px;       /* Añade un espacio superior respecto al texto */
-    margin-bottom: 0;       /* Elimina el margen inferior para que pueda llegar al borde si es necesario */
-    width: 100%;            /* Asegura que ocupe el ancho disponible */
-}
-
-/* --- NUEVAS CLASES PARA REEMPLAZAR ESTILOS EN LÍNEA --- */
-
-/* Estilo para las citas o frases destacadas (usado en Diapo 2) */
-.highlight-quote {
-    margin-top: 40px;
-    font-style: italic;
-    border-left: 4px solid var(--accent-color);
-    padding-left: 15px;
-}
-
-/* Estilo para el texto de flujo de la sesión (usado en Diapo 4) */
-.session-flow-text {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-/* Estilo para resaltar un icono (usado en Diapo 3 y 9) */
-.icon-highlight {
-    color: var(--accent-color);
-}
-
-/* Estilo general para las citas en bloque (usado en Diapo de Reflexión) */
-.reveal blockquote {
-    font-size: 1.5em;
-    text-align: center;
-    max-width: 80%;
-    margin: 40px auto;
-}
-
-/* Estilo para el encabezado de la diapositiva final de contacto */
-.contact-heading {
-    margin-top: 50px;
-}
-
-/* Estilo para listas sin viñetas (usado en Diapo 1) */
-.no-style-list {
-    list-style: none;
-    padding-left: 0;
-}
-
-/* ========================================================================== */
-/* --- AJUSTE FINAL Y FORZADO PARA DIAPOSITIVAS CON CORTE --- */
-/* ========================================================================== */
-
-/* Esta regla se enfoca específicamente en los layouts como el de la Diapositiva 7
-   y utiliza !important para garantizar que anule cualquier otro estilo en conflicto. */
-
-.layout-center-focus {
-    justify-content: flex-start !important; /* ¡FUERZA la alineación superior! */
-}
-
-/* --- NUEVOS ESTILOS PARA LAYOUTS CON MÚLTIPLES COLUMNAS --- */
-
-.columns-wrapper {
-  display: flex;
-  align-items: flex-start; /* Alinea el contenido de las columnas arriba */
-  justify-content: center;
-  gap: 30px;               /* Espacio entre las columnas */
-  width: 100%;
-  margin-top: 20px;
-}
-
-.columns-wrapper .column {
-  flex: 1; /* Hace que cada columna ocupe el mismo espacio */
-  text-align: left;
-}
-
-.columns-wrapper .column img {
-  width: 100%; /* La imagen ocupa todo el ancho de su columna */
-  border-radius: 8px;
+/* Opcional: Ocultar el logo en la primera diapositiva si no lo quieres en la portada */
+.reveal .slides section:first-child .company-logo {
+  display: none;
 }
