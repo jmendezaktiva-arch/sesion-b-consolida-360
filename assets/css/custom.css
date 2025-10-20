@@ -196,3 +196,26 @@
   display: none;
 }
 
+/* --- ESTILOS PARA EL BOTÓN DEL CUADERNO DE EJERCICIOS --- */
+
+.workbook-button {
+    display: inline-block;
+    background-color: var(--accent-color); /* Usa el color de acento definido */
+    color: #FFFFFF;
+    padding: 12px 25px;
+    border-radius: 50px; /* Bordes redondeados */
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 40px; /* Espacio superior para separarlo del subtítulo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.workbook-button:hover {
+    background-color: #FFFFFF;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    transform: translateY(-3px); /* Efecto sutil al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
