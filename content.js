@@ -37,14 +37,20 @@ const slideContent = [
   {
     layout: 'layout-center-focus',
     title: 'Sus Guías en este Viaje',
-    subtitle: 'Aliados en tu Estrategia'
+    subtitle: 'Aliados en tu Estrategia',
+        image: {
+      src: 'assets/images/slide-4.png'
+    }
   },
 
   // Lámina 5: Reglas del Juego
   {
     layout: 'layout-default slide-5-custom',
     title: 'Reglas del Juego y Dinámica',
-    subtitle: 'Fomentando la Responsabilidad y el Compromiso'
+    subtitle: 'Fomentando la Responsabilidad y el Compromiso',
+        image: {
+      src: 'assets/images/slide-5.png'
+    }
   },
 
   // Lámina 6: Objetivos de Hoy (dos columnas, imagen a la izquierda)
@@ -53,7 +59,7 @@ const slideContent = [
     title: 'Objetivos de Hoy: Tu Camino al Éxito',
     subtitle: 'De la Estrategia al Plan',
     image: {
-      src: 'assets/images/slide-6.png', // RUTA CORREGIDA: Usando el nombre real de tu archivo
+      src: 'assets/images/slide-6.1.png', // RUTA CORREGIDA: Usando el nombre real de tu archivo
       alt: 'Iconos representando los objetivos de la sesión'
     }
   },
@@ -132,7 +138,10 @@ const slideContent = [
   {
     layout: 'layout-center-focus',
     title: 'Conclusiones y Cierre Efectivo',
-    subtitle: 'Menos es Más, Más Resultados'
+    subtitle: 'Menos es Más, Más Resultados',
+        image: {
+      src: 'assets/images/slide-17.png'
+    }
   },
   
   // Lámina 18: Tareas
@@ -146,7 +155,10 @@ const slideContent = [
   {
     layout: 'layout-center-focus',
     title: '¡No te quedes con dudas! Contáctanos para más información.',
-    subtitle: 'Gracias por participar'
+    subtitle: 'Gracias por participar',
+        image: {
+      src: 'assets/images/slide-19.png'
+    }
   }
 
   
