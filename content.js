@@ -100,65 +100,11 @@ const slideContent = [
 // --- SERIE DE EJERCICIOS (MODIFICADO) ---
   {
     layout: 'layout-center-focus',
-    title: 'Ejercicio 1: Tu Mapa de Foco Estratégico',
+    title: 'Plan de implementación',
     subtitle: 'Diagnosticando tu Ecosistema Digital',
     workbookLink: {
         url: '../workbook/index.html#diagnostico',
-        text: 'Abrir Ejercicio 1'
-    }
-  },
-  {
-    layout: 'layout-center-focus',
-    title: 'Ejercicio 2: La Ficha de Cliente Ideal',
-    subtitle: 'Conectando con tu Mercado',
-    workbookLink: {
-        url: '../workbook/index.html#persona',
-        text: 'Abrir Ejercicio 2'
-    }
-  },
-  {
-    layout: 'layout-center-focus',
-    title: 'Ejercicio 3: Auditoría de Activos Digitales',
-    subtitle: 'Plan de Optimización Inmediata',
-    workbookLink: {
-        url: '../workbook/index.html#auditoria',
-        text: 'Abrir Ejercicio 3'
-    }
-  },
-  {
-    layout: 'layout-center-focus',
-    title: 'Ejercicio 4: La Matriz de Priorización Inteligente',
-    subtitle: 'Eligiendo tus Batallas',
-    workbookLink: {
-        url: '../workbook/index.html#matriz',
-        text: 'Abrir Ejercicio 4'
-    }
-  },
-  {
-    layout: 'layout-center-focus',
-    title: 'Ejercicio 5: El Plan Maestro de Canal',
-    subtitle: 'Tu Estrategia de Contenidos y Conversión',
-    workbookLink: {
-        url: '../workbook/index.html#plan',
-        text: 'Abrir Ejercicio 5'
-    }
-  },
-  {
-    layout: 'layout-center-focus',
-    title: 'Ejercicio 6: El Diseñador de Flujos de Captación',
-    subtitle: 'Construyendo tu Motor de Leads',
-    workbookLink: {
-        url: '../workbook/index.html#flujo',
-        text: 'Abrir Ejercicio 6'
-    }
-  },
-  {
-    layout: 'layout-center-focus',
-    title: 'Ejercicio 7: Mi Sprint de Implementación de 30 Días',
-    subtitle: 'Del plan a los resultados',
-    workbookLink: {
-        url: '../workbook/index.html#sprint',
-        text: 'Abrir Ejercicio 7'
+        text: 'Abrir Plan de Implementación'
     }
   },
 
