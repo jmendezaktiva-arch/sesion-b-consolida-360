@@ -55,6 +55,19 @@ if (slideData.layout) {
         }
         // **FIN DE LA MODIFICACIÓN CLAVE**
 
+        // --- INICIO DE LA MODIFICACIÓN: AÑADIR BOTÓN AL WORKBOOK ---
+        if (slideData.workbookLink && slideData.workbookLink.url) {
+            const button = document.createElement('a');
+            button.href = slideData.workbookLink.url;
+            button.target = '_blank'; // Abre el cuaderno en una nueva pestaña
+            button.rel = 'noopener noreferrer';
+            button.className = 'workbook-button'; // Clase para darle estilos
+            button.textContent = slideData.workbookLink.text || 'Abrir Cuaderno de Ejercicio';
+
+            section.appendChild(button);
+        }
+        // --- FIN DE LA MODIFICACIÓN ---
+
         // Si hay una lista de puntos, agrégala (asumo que slideData.points podría existir)
         if (slideData.points && Array.isArray(slideData.points)) {
             const ul = document.createElement('ul');
