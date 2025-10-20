@@ -180,12 +180,12 @@
 .reveal .slides { position: relative; }
 
 .company-logo {
-  position: aboslute;
+  position: absolute;
   top: 20px;
   left: 20px;
   z-index: 101;
-width: 80px !important; /* Prueba con esto */
-    height: auto !important; /* Y esto */
+  width: 80px;
+  height: auto;
   opacity: 0.7;
 }
 
@@ -194,18 +194,3 @@ width: 80px !important; /* Prueba con esto */
   display: none;
 }
 
-/* Regla específica para el logotipo para controlar su tamaño */
-.logo-container img {
-    max-height: 100px; /* Ajusta este valor según el tamaño deseado para tu logo */
-    width: auto;       /* Mantener la proporción original del logo */
-    margin: 10px;      /* Pequeño margen para separación si es necesario */
-}
-
-/* Si tu logo no está dentro de un div con 'logo-container',
-   podrías necesitar una regla más específica si le has dado un ID o CLASE a tu IMG.
-   Por ejemplo, si el img tiene id="mi-logo":
-   #mi-logo {
-       max-height: 100px;
-       width: auto;
-   }
-*/
