@@ -27,7 +27,10 @@ const slideContent = [
   {
     layout: 'layout-infographic',
     title: 'Tu Programa de Transformación',
-    subtitle: 'Los 3 Pilares de tu Consolidación'
+    subtitle: 'Los 3 Pilares de tu Consolidación',
+    image: {
+      src: 'assets/images/slide-3.png'
+    }
   },
 
   // Lámina 4: Sus Guías
