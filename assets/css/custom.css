@@ -193,3 +193,19 @@
 .reveal .slides section:first-child .company-logo {
   display: none;
 }
+
+/* Regla específica para el logotipo para controlar su tamaño */
+.logo-container img {
+    max-height: 100px; /* Ajusta este valor según el tamaño deseado para tu logo */
+    width: auto;       /* Mantener la proporción original del logo */
+    margin: 10px;      /* Pequeño margen para separación si es necesario */
+}
+
+/* Si tu logo no está dentro de un div con 'logo-container',
+   podrías necesitar una regla más específica si le has dado un ID o CLASE a tu IMG.
+   Por ejemplo, si el img tiene id="mi-logo":
+   #mi-logo {
+       max-height: 100px;
+       width: auto;
+   }
+*/
