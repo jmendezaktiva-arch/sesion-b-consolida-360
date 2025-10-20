@@ -4,11 +4,11 @@ const slideContent = [
   // Lámina 1: Portada
   {
     layout: 'layout-center-focus',
-    title: '¡Bienvenidos a Consolidación 360°!',
+    title: '¡Bienvenidos a Consolida 360°!',
     subtitle: 'Juntos construimos tu ruta digital en acción.',
     image: {
       src: 'assets/images/slide-1.png', // RUTA CORREGIDA: Usando el nombre real de tu archivo
-      alt: 'Portada de Bienvenida a Consolidación 360'
+      alt: 'Portada de Bienvenida a Consolida 360°'
     }
   },
   
