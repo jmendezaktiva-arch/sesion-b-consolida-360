@@ -122,7 +122,16 @@ const slideContent = [
   {
     layout: 'layout-center-focus',
     title: 'Tareas Asignadas y Siguientes Pasos',
-    subtitle: 'Tu compromiso con la acción'
+    subtitle: 'Tu compromiso con la acción',
+        content: `
+      <p>Asegura una implementación <strong>exitosa</strong>.</p>
+      <ul>
+        <li>Da seguimiento a las sesiones semanales con tus colaboradores.</li>
+        <li>Configura tu ecosistema digital.</li>
+        <li>No faltes a la próxima sesión.</li>
+        <li>Programa tu reunión individual con el equipo de consultoría.</li>
+      </ul>
+    `, 
   },
 
   // Lámina 19: Contacto
