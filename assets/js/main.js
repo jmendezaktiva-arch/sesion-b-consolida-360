@@ -17,59 +17,55 @@ document.addEventListener('DOMContentLoaded', () => {
         const section = document.createElement('section');
         section.classList.add('slide-section'); // Clase para estilos generales si los hay
 
-// Lógica condicional para layouts
-    if (slideData.layout && slideData.layout.includes('two-columns')) {
-        // --- ESTRUCTURA PARA DOS COLUMNAS ---
-        const wrapper = document.createElement('div');
-        wrapper.className = 'content-wrapper';
+if (slideData.layout) {
+    // Divide la cadena por espacios y añade cada clase por separado
+    slideData.layout.split(' ').forEach(cls => section.classList.add(cls));
+}
 
-        const textColumn = document.createElement('div');
-        textColumn.className = 'column text-column';
-
-        if (slideData.title) {
-            const h2 = document.createElement('h2');
-            h2.textContent = slideData.title;
-            textColumn.appendChild(h2);
-        }
-        if (slideData.subtitle) {
-            const p = document.createElement('p');
-            p.textContent = slideData.subtitle;
-            textColumn.appendChild(p);
-        }
-        wrapper.appendChild(textColumn);
-
-        const imageColumn = document.createElement('div');
-        imageColumn.className = 'column image-column';
-        
-        if (slideData.image && slideData.image.src) {
-            const img = document.createElement('img');
-            img.src = slideData.image.src;
-            img.alt = slideData.image.alt || `Imagen de la diapositiva ${index + 1}`;
-            img.classList.add('slide-image');
-            imageColumn.appendChild(img);
-        }
-        wrapper.appendChild(imageColumn);
-        section.appendChild(wrapper);
-
-    } else {
-        // --- ESTRUCTURA PREDETERMINADA (PLANA) PARA TODO LO DEMÁS ---
+        // Título
         if (slideData.title) {
             const h2 = document.createElement('h2');
             h2.textContent = slideData.title;
             section.appendChild(h2);
         }
+
+        // Subtítulo
         if (slideData.subtitle) {
             const p = document.createElement('p');
             p.textContent = slideData.subtitle;
             section.appendChild(p);
         }
-        if (slideData.image && slideData.image.src) {
+
+        // **MODIFICACIÓN CLAVE AQUÍ PARA LA IMAGEN**
+        if (slideData.image) {
             const img = document.createElement('img');
-            img.src = slideData.image.src;
-            img.alt = slideData.image.alt || `Imagen de la diapositiva ${index + 1}`;
-            img.classList.add('slide-image');
+            // Si slideData.image es un string (URL directa), úsala.
+            // Si es un objeto, accede a slideData.image.src.
+            if (typeof slideData.image === 'string') {
+                img.src = slideData.image;
+                img.alt = `Imagen de la diapositiva ${index + 1}`; // Alt genérico si la URL es directa
+            } else if (typeof slideData.image === 'object' && slideData.image.src) {
+                img.src = slideData.image.src;
+                img.alt = slideData.image.alt || `Imagen de la diapositiva ${index + 1}`;
+            }
+            
+            // Añadir una clase para que puedas estilizar las imágenes si es necesario
+            img.classList.add('slide-image'); 
             section.appendChild(img);
         }
-    }
+        // **FIN DE LA MODIFICACIÓN CLAVE**
+
+        // Si hay una lista de puntos, agrégala (asumo que slideData.points podría existir)
+        if (slideData.points && Array.isArray(slideData.points)) {
+            const ul = document.createElement('ul');
+            slideData.points.forEach(point => {
+                const li = document.createElement('li');
+                li.textContent = point;
+                ul.appendChild(li);
+            });
+            section.appendChild(ul);
+        }
+
+        slidesContainer.appendChild(section);
     });
 });
