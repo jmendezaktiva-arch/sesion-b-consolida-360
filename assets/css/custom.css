@@ -23,10 +23,10 @@
 /* 1. Contenedor Principal de Diapositiva: Asegura que el contenido fluya verticalmente */
 /* DESPUÉS (CORREGIDO) */
 .reveal .slides section {
-    display: inside;
+    display: flex;
     flex-direction: column;
     justify-content: center; 
-    align-items: center; /* <-- AÑADE ESTA LÍNEA */
+    /*align-items: center; /* <-- AÑADE ESTA LÍNEA */
     height: 100%;
     padding: 20px 40px;
     box-sizing: border-box;
@@ -63,6 +63,7 @@
 /* 2. layout-center-focus: Enfoca la frase centralmente */
 .layout-center-focus {
     justify-content: center !important; /* Centra el contenido verticalmente */
+    align-items: center; /* <-- AÑADIR ESTA LÍNEA */
     text-align: center;
 }
 
@@ -183,10 +184,10 @@
 
 .company-logo {
   position: absolute;
-  top: 20px;
-  left: 10px;
+  top: 15px;
+  left: 15px;
   z-index: 101;
-  width: 100px;
+  width: 80px;
   height: auto;
   opacity: 1;
 }
