@@ -25,7 +25,7 @@
 .reveal .slides section {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; 
+    justify-content: center; 
     align-items: center; /* <-- AÑADE ESTA LÍNEA */
     height: 100%;
     padding: 20px 40px;
