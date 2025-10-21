@@ -26,9 +26,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center; 
-    align-items: normal; /* <-- AÑADE ESTA LÍNEA */
+    align-items: center; /* <-- AÑADE ESTA LÍNEA */
     height: 100%;
-    padding: 10px 50px;
+    padding: 5px 55px;
     box-sizing: border-box;
     text-align: center;
 }
