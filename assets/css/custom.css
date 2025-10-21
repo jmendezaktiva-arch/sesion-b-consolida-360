@@ -24,8 +24,8 @@
 /* DESPUÉS (CORREGIDO) */
 .reveal .slides section {
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: center; 
+    flex-direction: column;
+    justify-content: normal; 
     align-items: center; /* <-- AÑADE ESTA LÍNEA */
     height: 100%;
     padding: 20px 40px;
