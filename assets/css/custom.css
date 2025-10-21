@@ -195,18 +195,13 @@
 .reveal .slides { position: relative; }
 
 .company-logo {
-  position: absolute;
+  position: fixed;
   top: 15px;
   left: 15px;
   z-index: 101;
   width: 80px;
   height: auto;
   opacity: 1;
-}
-
-/* Opcional: Ocultar el logo en la primera diapositiva si no lo quieres en la portada */
-.reveal .slides section:first-child .company-logo {
-  display: none;
 }
 
 /* --- ESTILOS PARA EL BOTÓN DEL CUADERNO DE EJERCICIOS --- */
