@@ -22,11 +22,10 @@
 
 /* 1. Contenedor Principal de Diapositiva: Asegura que el contenido fluya verticalmente */
 /* DESPUÉS (CORREGIDO) */
-.reveal .slides section {
+  .reveal .slides section {
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    /*align-items: center; /* <-- AÑADE ESTA LÍNEA */
+    justify-content: flex-start; /* <-- ESTE ES EL CAMBIO */
     height: 100%;
     padding: 20px 40px;
     box-sizing: border-box;
