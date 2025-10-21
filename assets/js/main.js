@@ -36,6 +36,15 @@ if (slideData.layout) {
             section.appendChild(p);
         }
 
+                // Procesar contenido HTML directo si existe
+        if (slideData.content) {
+            const contentDiv = document.createElement('div');
+            // Usamos innerHTML para que el navegador interprete las etiquetas HTML
+            contentDiv.innerHTML = slideData.content; 
+            section.appendChild(contentDiv);
+        }
+        // --- FIN DE LA CORRECCIÓN ---
+
         // **MODIFICACIÓN CLAVE AQUÍ PARA LA IMAGEN**
         if (slideData.image) {
             const img = document.createElement('img');
