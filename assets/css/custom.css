@@ -192,8 +192,6 @@
 
 /* --- LOGO FIJO EN ESQUINA --- */
 
-.reveal .slides { position: relative; }
-
 .company-logo {
   position: fixed;
   top: 15px;
