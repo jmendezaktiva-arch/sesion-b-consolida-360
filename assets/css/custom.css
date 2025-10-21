@@ -23,7 +23,7 @@
 /* 1. Contenedor Principal de Diapositiva: Asegura que el contenido fluya verticalmente */
 /* DESPUÉS (CORREGIDO) */
 .reveal .slides section {
-    display: flex;
+    display: outside;
     flex-direction: column;
     justify-content: center; 
     align-items: center; /* <-- AÑADE ESTA LÍNEA */
