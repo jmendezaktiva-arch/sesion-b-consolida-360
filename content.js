@@ -1,6 +1,17 @@
 // Archivo de Contenido para la Presentación: Sesión B
 
 const slideContent = [
+
+  // Lámina de Inicio: Recepción (2 Min)
+  {
+    layout: 'layout-center-focus',
+    title: 'Equipo Proactivo, Empresa Exitosa: De Tareas a Resultados',
+    image: {
+      src: 'assets/images/slide-2.1.png', // Usando el logo que ya tienes
+      alt: 'Logo de Mi Empresa Crece'
+    }
+  },
+  
   // Lámina 1: Portada
   {
     layout: 'layout-center-focus',
@@ -148,5 +159,14 @@ const slideContent = [
     }
   }
 
+    {
+    layout: 'layout-center-focus',
+    title: 'Equipo Proactivo, Empresa Exitosa: De Tareas a Resultados',
+    subtitle: 'Gracias por su compromiso.',
+    image: {
+      src: 'assets/images/slide-2.1.png', // Mismo logo para consistencia
+      alt: 'Logo de Mi Empresa Crece'
+    }
+  }
   
 ];
