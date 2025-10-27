@@ -73,50 +73,50 @@ document.addEventListener('DOMContentLoaded', function() {
             <p><strong>Objetivo:</strong> Crear un arquetipo detallado del cliente ideal que sirva como brújula para todas las decisiones de marketing.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-gray-50 p-4 rounded-lg border"><h3 class="font-bold text-lg mb-2 text-gray-800">Sección 1: El Retrato (Datos Demográficos y Laborales)</h3><textarea class="autosave-input w-full p-2 border border-gray-300 rounded-md h-24" placeholder="Nombre, Edad, Cargo, Sector..." data-section="persona" data-id="persona_retrato"></textarea></div>
-            <div class="bg-gray-50 p-4 rounded-lg border"><h3 class="font-bold text-lg mb-2 text-gray-800">Sección 2: La Mente (Metas y Desafíos)</h3><textarea class="autosave-input w-full p-2 border border-gray-300 rounded-md h-24" placeholder="¿Qué busca lograr? ¿Qué le impide dormir por la noche?" data-section="persona" data-id="persona_mente"></textarea></div>
-            <div class="bg-gray-50 p-4 rounded-lg border"><h3 class="font-bold text-lg mb-2 text-gray-800">Sección 3: El Corazón (Objeciones y Motivaciones)</h3><textarea class="autosave-input w-full p-2 border border-gray-300 rounded-md h-24" placeholder="¿Qué le haría dudar? ¿Qué resultado sueña obtener?" data-section="persona" data-id="persona_corazon"></textarea></div>
-            <div class="bg-gray-50 p-4 rounded-lg border"><h3 class="font-bold text-lg mb-2 text-gray-800">Sección 4: El Hábitat Digital (Plataformas y Contenidos)</h3><textarea class="autosave-input w-full p-2 border border-gray-300 rounded-md h-24" placeholder="¿Qué 3 redes sociales usa? ¿Qué tipo de contenido consume?" data-section="persona" data-id="persona_habitat"></textarea></div>
+            <div class="bg-gray-50 p-4 rounded-lg border"><h3 class="font-bold text-lg mb-2 text-gray-800">Sección 1: Datos Demográficos y Laborales</h3><textarea class="autosave-input w-full p-2 border border-gray-300 rounded-md h-24" placeholder="Nombre, Edad, Cargo, Sector..." data-section="persona" data-id="persona_retrato"></textarea></div>
+            <div class="bg-gray-50 p-4 rounded-lg border"><h3 class="font-bold text-lg mb-2 text-gray-800">Sección 2: Metas y Desafíos</h3><textarea class="autosave-input w-full p-2 border border-gray-300 rounded-md h-24" placeholder="¿Qué busca lograr? ¿Qué le impide dormir por la noche?" data-section="persona" data-id="persona_mente"></textarea></div>
+            <div class="bg-gray-50 p-4 rounded-lg border"><h3 class="font-bold text-lg mb-2 text-gray-800">Sección 3: Objeciones y Motivaciones</h3><textarea class="autosave-input w-full p-2 border border-gray-300 rounded-md h-24" placeholder="¿Qué le haría dudar? ¿Qué resultado sueña obtener?" data-section="persona" data-id="persona_corazon"></textarea></div>
+            <div class="bg-gray-50 p-4 rounded-lg border"><h3 class="font-bold text-lg mb-2 text-gray-800">Sección 4: Plataformas y Contenidos</h3><textarea class="autosave-input w-full p-2 border border-gray-300 rounded-md h-24" placeholder="¿Qué 3 redes sociales usa? ¿Qué tipo de contenido consume?" data-section="persona" data-id="persona_habitat"></textarea></div>
         </div>`;
     
-    document.getElementById('auditoria').innerHTML = `
-        <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[2].title}</h2>
-        <div class="instructions-box">
-            <p><strong>Objetivo:</strong> Convertir conceptos de "presencia orgánica básica" en una lista de tareas concretas y priorizadas.</p>
-        </div>
-        <div class="overflow-x-auto">
-            <table class="w-full min-w-[800px] text-sm text-left text-gray-500">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-100">
-                    <tr><th class="px-4 py-3">Punto de Verificación</th><th class="px-4 py-3">Estado (R/A/V)</th><th class="px-4 py-3">Acción de Mejora Específica</th><th class="px-4 py-3">Responsable y Fecha Límite</th></tr>
-                </thead>
-                <tbody>
-                    <tr class="border-b">
-                        <td class="px-4 py-2 font-medium">CTA claro y visible en Home</td>
-                        <td class="px-4 py-2"><select class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_cta_status"><option value="Rojo">Rojo</option><option value="Amarillo">Amarillo</option><option value="Verde">Verde</option></select></td>
-                        <td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_cta_accion"></td>
-                        <td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_cta_responsable"></td>
-                    </tr>
-                    <tr class="border-b">
-                        <td class="px-4 py-2 font-medium">Velocidad de carga en móvil (< 3s)</td>
-                        <td class="px-4 py-2"><select class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_velocidad_status"><option value="Rojo">Rojo</option><option value="Amarillo">Amarillo</option><option value="Verde">Verde</option></select></td>
-                        <td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_velocidad_accion"></td>
-                        <td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_velocidad_responsable"></td>
-                    </tr>
-                    <tr class="border-b">
-                        <td class="px-4 py-2 font-medium">Prueba social presente</td>
-                        <td class="px-4 py-2"><select class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_prueba_status"><option value="Rojo">Rojo</option><option value="Amarillo">Amarillo</option><option value="Verde">Verde</option></select></td>
-                        <td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_prueba_accion"></td>
-                        <td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_prueba_responsable"></td>
-                    </tr>
-                    <tr>
-                        <td class="px-4 py-2 font-medium">Contacto fácil de encontrar</td>
-                        <td class="px-4 py-2"><select class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_contacto_status"><option value="Rojo">Rojo</option><option value="Amarillo">Amarillo</option><option value="Verde">Verde</option></select></td>
-                        <td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_contacto_accion"></td>
-                        <td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_contacto_responsable"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>`;
+document.getElementById('auditoria').innerHTML = `
+    <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[2].title}</h2>
+    <div class="instructions-box">
+        <p><strong>Objetivo:</strong> Convertir conceptos de "presencia orgánica básica" en una lista de tareas concretas y priorizadas.</p>
+    </div>
+    <div class="overflow-x-auto">
+        <table class="w-full min-w-[800px] text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                <tr><th class="px-4 py-3">Punto de Verificación</th><th class="px-4 py-3">Estado (R/A/V)</th><th class="px-4 py-3">Acción de Mejora Específica</th><th class="px-4 py-3">Responsable y Fecha Límite</th></tr>
+            </thead>
+            <tbody>
+                <tr class="border-b">
+                    <td class="px-4 py-2 font-medium">CTA claro y visible en Home</td>
+                    <td class="px-4 py-2"><select class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_cta_status"><option value="Rojo">Rojo</option><option value="Amarillo">Amarillo</option><option value="Verde">Verde</option></select></td>
+                    <td class="px-4 py-2"><input type="text" placeholder="Ej: Rediseñar banner con botón 'Cotizar Ahora'" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_cta_accion"></td>
+                    <td class="px-4 py-2"><input type="text" placeholder="Ej: Ana Pérez - 05/11/2025" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_cta_responsable"></td>
+                </tr>
+                <tr class="border-b">
+                    <td class="px-4 py-2 font-medium">Velocidad de carga en móvil (< 3s)</td>
+                    <td class="px-4 py-2"><select class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_velocidad_status"><option value="Rojo">Rojo</option><option value="Amarillo">Amarillo</option><option value="Verde">Verde</option></select></td>
+                    <td class="px-4 py-2"><input type="text" placeholder="Ej: Comprimir imágenes con TinyPNG" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_velocidad_accion"></td>
+                    <td class="px-4 py-2"><input type="text" placeholder="Ej: Luis García - 12/11/2025" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_velocidad_responsable"></td>
+                </tr>
+                <tr class="border-b">
+                    <td class="px-4 py-2 font-medium">Prueba social presente</td>
+                    <td class="px-4 py-2"><select class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_prueba_status"><option value="Rojo">Rojo</option><option value="Amarillo">Amarillo</option><option value="Verde">Verde</option></select></td>
+                    <td class="px-4 py-2"><input type="text" placeholder="Ej: Agregar sección de testimonios en Home" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_prueba_accion"></td>
+                    <td class="px-4 py-2"><input type="text" placeholder="Ej: Ana Pérez - 15/11/2025" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_prueba_responsable"></td>
+                </tr>
+                <tr>
+                    <td class="px-4 py-2 font-medium">Contacto fácil de encontrar</td>
+                    <td class="px-4 py-2"><select class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_contacto_status"><option value="Rojo">Rojo</option><option value="Amarillo">Amarillo</option><option value="Verde">Verde</option></select></td>
+                    <td class="px-4 py-2"><input type="text" placeholder="Ej: Poner un botón de WhatsApp flotante" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_contacto_accion"></td>
+                    <td class="px-4 py-2"><input type="text" placeholder="Ej: Luis García - 18/11/2025" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_contacto_responsable"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>`;
 
     document.getElementById('matriz').innerHTML = `
         <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[3].title}</h2>
@@ -134,59 +134,59 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>`;
 
-    document.getElementById('plan').innerHTML = `
-        <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[4].title}</h2>
-        <div class="instructions-box">
-            <p><strong>Objetivo:</strong> Crear un plan estratégico de una página para cada uno de los 2 canales prioritarios seleccionados en la matriz.</p>
+document.getElementById('plan').innerHTML = `
+    <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[4].title}</h2>
+    <div class="instructions-box">
+        <p><strong>Objetivo:</strong> Crear un plan estratégico de una página para cada uno de los 2 canales prioritarios seleccionados en la matriz.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 p-6 rounded-lg border space-y-4">
+            <h3 class="font-bold text-lg text-gray-800">Plan para Canal Prioritario #1</h3>
+            <div><label class="block text-md font-medium text-gray-700">Rol Estratégico del Canal:</label><div class="flex flex-wrap gap-4 mt-2"><label class="flex items-center"><input type="radio" name="rol1" class="autosave-input form-radio" value="leads" data-section="plan" data-id="plan1_rol"> Leads</label><label class="flex items-center"><input type="radio" name="rol1" class="autosave-input form-radio" value="comunidad" data-section="plan" data-id="plan1_rol"> Comunidad</label><label class="flex items-center"><input type="radio" name="rol1" class="autosave-input form-radio" value="ventas" data-section="plan" data-id="plan1_rol"> Ventas</label></div></div>
+            <div><label class="block text-md font-medium text-gray-700">Métrica Clave de Éxito (KPI):</label><input type="text" placeholder="Ej: # de leads calificados por semana" class="autosave-input w-full p-2 border rounded-md" data-section="plan" data-id="plan1_kpi"></div>
+            <div><label class="block text-md font-medium text-gray-700">Líneas de Contenido Fundacional:</label><textarea rows="3" placeholder="Ej: 1. Tutoriales en video. 2. Casos de éxito de clientes. 3. Guías descargables." class="autosave-input w-full p-2 border rounded-md" data-section="plan" data-id="plan1_contenido"></textarea></div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-gray-50 p-6 rounded-lg border space-y-4">
-                <h3 class="font-bold text-lg text-gray-800">Plan para Canal Prioritario #1</h3>
-                <div><label class="block text-md font-medium text-gray-700">Rol Estratégico del Canal:</label><div class="flex flex-wrap gap-4 mt-2"><label class="flex items-center"><input type="radio" name="rol1" class="autosave-input form-radio" value="leads" data-section="plan" data-id="plan1_rol"> Leads</label><label class="flex items-center"><input type="radio" name="rol1" class="autosave-input form-radio" value="comunidad" data-section="plan" data-id="plan1_rol"> Comunidad</label><label class="flex items-center"><input type="radio" name="rol1" class="autosave-input form-radio" value="ventas" data-section="plan" data-id="plan1_rol"> Ventas</label></div></div>
-                <div><label class="block text-md font-medium text-gray-700">Métrica Clave de Éxito (KPI):</label><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="plan" data-id="plan1_kpi"></div>
-                <div><label class="block text-md font-medium text-gray-700">Líneas de Contenido Fundacional:</label><textarea rows="3" class="autosave-input w-full p-2 border rounded-md" data-section="plan" data-id="plan1_contenido"></textarea></div>
-            </div>
-            <div class="bg-gray-50 p-6 rounded-lg border space-y-4">
-                <h3 class="font-bold text-lg text-gray-800">Plan para Canal Prioritario #2</h3>
-                <div><label class="block text-md font-medium text-gray-700">Rol Estratégico del Canal:</label><div class="flex flex-wrap gap-4 mt-2"><label class="flex items-center"><input type="radio" name="rol2" class="autosave-input form-radio" value="leads" data-section="plan" data-id="plan2_rol"> Leads</label><label class="flex items-center"><input type="radio" name="rol2" class="autosave-input form-radio" value="comunidad" data-section="plan" data-id="plan2_rol"> Comunidad</label><label class="flex items-center"><input type="radio" name="rol2" class="autosave-input form-radio" value="ventas" data-section="plan" data-id="plan2_rol"> Ventas</label></div></div>
-                <div><label class="block text-md font-medium text-gray-700">Métrica Clave de Éxito (KPI):</label><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="plan" data-id="plan2_kpi"></div>
-                <div><label class="block text-md font-medium text-gray-700">Líneas de Contenido Fundacional:</label><textarea rows="3" class="autosave-input w-full p-2 border rounded-md" data-section="plan" data-id="plan2_contenido"></textarea></div>
-            </div>
-        </div>`;
+        <div class="bg-gray-50 p-6 rounded-lg border space-y-4">
+            <h3 class="font-bold text-lg text-gray-800">Plan para Canal Prioritario #2</h3>
+            <div><label class="block text-md font-medium text-gray-700">Rol Estratégico del Canal:</label><div class="flex flex-wrap gap-4 mt-2"><label class="flex items-center"><input type="radio" name="rol2" class="autosave-input form-radio" value="leads" data-section="plan" data-id="plan2_rol"> Leads</label><label class="flex items-center"><input type="radio" name="rol2" class="autosave-input form-radio" value="comunidad" data-section="plan" data-id="plan2_rol"> Comunidad</label><label class="flex items-center"><input type="radio" name="rol2" class="autosave-input form-radio" value="ventas" data-section="plan" data-id="plan2_rol"> Ventas</label></div></div>
+            <div><label class="block text-md font-medium text-gray-700">Métrica Clave de Éxito (KPI):</label><input type="text" placeholder="Ej: Tasa de interacción del 5%" class="autosave-input w-full p-2 border rounded-md" data-section="plan" data-id="plan2_kpi"></div>
+            <div><label class="block text-md font-medium text-gray-700">Líneas de Contenido Fundacional:</label><textarea rows="3" placeholder="Ej: 1. Videos cortos 'detrás de cámaras'. 2. Encuestas interactivas. 3. Sesiones de Q&A en vivo." class="autosave-input w-full p-2 border rounded-md" data-section="plan" data-id="plan2_contenido"></textarea></div>
+        </div>
+    </div>`;
 
-    document.getElementById('flujo').innerHTML = `
-        <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[5].title}</h2>
-        <div class="instructions-box">
-             <p><strong>Objetivo:</strong> Diseñar visualmente tu primer embudo de captación y automatización simple y efectivo.</p>
-        </div>
-        <div class="flex flex-col md:flex-row items-center justify-center gap-x-4 gap-y-8 text-center flex-wrap">
-            <div class="bg-blue-50 p-4 rounded-lg border border-blue-300 w-full sm:w-5/12 lg:w-1/5"><h4 class="font-bold">1. Fuente de Tráfico</h4><textarea placeholder="¿Desde dónde llegará la gente?" class="autosave-input w-full mt-2 p-2 border rounded-md h-24" data-section="flujo" data-id="flujo_fuente"></textarea></div>
-            <div class="text-2xl font-bold text-blue-400 hidden lg:block">→</div>
-            <div class="bg-blue-50 p-4 rounded-lg border border-blue-300 w-full sm:w-5/12 lg:w-1/5"><h4 class="font-bold">2. La Oferta (Lead Magnet)</h4><textarea placeholder="Mi Lead Magnet es..." class="autosave-input w-full mt-2 p-2 border rounded-md h-24" data-section="flujo" data-id="flujo_oferta"></textarea></div>
-            <div class="text-2xl font-bold text-blue-400 hidden lg:block">→</div>
-            <div class="bg-blue-50 p-4 rounded-lg border border-blue-300 w-full sm:w-5/12 lg:w-1/5"><h4 class="font-bold">3. La Captura</h4><textarea placeholder="¿Qué datos pediré?" class="autosave-input w-full mt-2 p-2 border rounded-md h-24" data-section="flujo" data-id="flujo_captura"></textarea></div>
-            <div class="text-2xl font-bold text-blue-400 hidden lg:block">→</div>
-            <div class="bg-blue-50 p-4 rounded-lg border border-blue-300 w-full sm:w-5/12 lg:w-1/5"><h4 class="font-bold">4. Mensaje de Bienvenida</h4><textarea placeholder="Asunto y primeras líneas..." class="autosave-input w-full mt-2 p-2 border rounded-md h-24" data-section="flujo" data-id="flujo_mensaje"></textarea></div>
-        </div>`;
+document.getElementById('flujo').innerHTML = `
+    <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[5].title}</h2>
+    <div class="instructions-box">
+         <p><strong>Objetivo:</strong> Diseñar visualmente tu primer embudo de captación y automatización simple y efectivo.</p>
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-center gap-x-4 gap-y-8 text-center flex-wrap">
+        <div class="bg-blue-50 p-4 rounded-lg border border-blue-300 w-full sm:w-5/12 lg:w-1/5"><h4 class="font-bold">1. Fuente de Tráfico</h4><textarea placeholder="Ej: Campaña de Anuncios en Instagram" class="autosave-input w-full mt-2 p-2 border rounded-md h-24" data-section="flujo" data-id="flujo_fuente"></textarea></div>
+        <div class="text-2xl font-bold text-blue-400 hidden lg:block">→</div>
+        <div class="bg-blue-50 p-4 rounded-lg border border-blue-300 w-full sm:w-5/12 lg:w-1/5"><h4 class="font-bold">2. La Oferta (Lead Magnet)</h4><textarea placeholder="Ej: Guía PDF 'Los 5 Errores al Elegir un CRM'" class="autosave-input w-full mt-2 p-2 border rounded-md h-24" data-section="flujo" data-id="flujo_oferta"></textarea></div>
+        <div class="text-2xl font-bold text-blue-400 hidden lg:block">→</div>
+        <div class="bg-blue-50 p-4 rounded-lg border border-blue-300 w-full sm:w-5/12 lg:w-1/5"><h4 class="font-bold">3. La Captura</h4><textarea placeholder="Ej: Pediremos nombre y correo en una landing page" class="autosave-input w-full mt-2 p-2 border rounded-md h-24" data-section="flujo" data-id="flujo_captura"></textarea></div>
+        <div class="text-2xl font-bold text-blue-400 hidden lg:block">→</div>
+        <div class="bg-blue-50 p-4 rounded-lg border border-blue-300 w-full sm:w-5/12 lg:w-1/5"><h4 class="font-bold">4. Mensaje de Bienvenida</h4><textarea placeholder="Ej: Asunto: 'Aquí tienes tu guía'. Cuerpo: 'Hola [Nombre], gracias por tu interés...'" class="autosave-input w-full mt-2 p-2 border rounded-md h-24" data-section="flujo" data-id="flujo_mensaje"></textarea></div>
+    </div>`;
 
-    document.getElementById('sprint').innerHTML = `
-        <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[6].title}</h2>
-        <div class="instructions-box">
-            <p><strong>Objetivo:</strong> Transformar la estrategia en un calendario de ejecución concreto y medible para las próximas 4 semanas.</p>
-        </div>
-        <div class="overflow-x-auto">
-            <table class="w-full min-w-[900px] text-sm text-left text-gray-500">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-100">
-                    <tr><th class="px-4 py-3">Semana</th><th class="px-4 py-3">Foco de la Semana</th><th class="px-4 py-3">Tareas Clave (3-5)</th><th class="px-4 py-3">Métrica de Enfoque</th><th class="px-4 py-3">Reflexión</th></tr>
-                </thead>
-                <tbody>
-                    <tr class="border-b"><td class="px-4 py-2 font-bold">1</td><td class="px-4 py-2"><input type="text" placeholder="Ej: Lanzamiento" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w1_foco"></td><td class="px-4 py-2"><textarea rows="2" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w1_tareas"></textarea></td><td class="px-4 py-2"><input type="text" placeholder="¿Qué número miraré?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w1_metrica"></td><td class="px-4 py-2"><textarea rows="2" placeholder="¿Qué funcionó?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w1_reflexion"></textarea></td></tr>
-                    <tr class="border-b"><td class="px-4 py-2 font-bold">2</td><td class="px-4 py-2"><input type="text" placeholder="Ej: Optimización" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w2_foco"></td><td class="px-4 py-2"><textarea rows="2" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w2_tareas"></textarea></td><td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w2_metrica"></td><td class="px-4 py-2"><textarea rows="2" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w2_reflexion"></textarea></td></tr>
-                    <tr class="border-b"><td class="px-4 py-2 font-bold">3</td><td class="px-4 py-2"><input type="text" placeholder="Ej: Escalamiento" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w3_foco"></td><td class="px-4 py-2"><textarea rows="2" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w3_tareas"></textarea></td><td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w3_metrica"></td><td class="px-4 py-2"><textarea rows="2" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w3_reflexion"></textarea></td></tr>
-                    <tr><td class="px-4 py-2 font-bold">4</td><td class="px-4 py-2"><input type="text" placeholder="Ej: Revisión y Plan" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w4_foco"></td><td class="px-4 py-2"><textarea rows="2" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w4_tareas"></textarea></td><td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w4_metrica"></td><td class="px-4 py-2"><textarea rows="2" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w4_reflexion"></textarea></td></tr>
-                </tbody>
-            </table>
-        </div>`;
+document.getElementById('sprint').innerHTML = `
+    <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[6].title}</h2>
+    <div class="instructions-box">
+        <p><strong>Objetivo:</strong> Transformar la estrategia en un calendario de ejecución concreto y medible para las próximas 4 semanas.</p>
+    </div>
+    <div class="overflow-x-auto">
+        <table class="w-full min-w-[900px] text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                <tr><th class="px-4 py-3">Semana</th><th class="px-4 py-3">Foco de la Semana</th><th class="px-4 py-3">Tareas Clave (3-5)</th><th class="px-4 py-3">Métrica de Enfoque</th><th class="px-4 py-3">Reflexión</th></tr>
+            </thead>
+            <tbody>
+                <tr class="border-b"><td class="px-4 py-2 font-bold">1</td><td class="px-4 py-2"><input type="text" placeholder="Ej: Lanzamiento Lead Magnet" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w1_foco"></td><td class="px-4 py-2"><textarea rows="2" placeholder="Ej: 1. Configurar campaña. 2. Diseñar creativos. 3. Escribir copies." class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w1_tareas"></textarea></td><td class="px-4 py-2"><input type="text" placeholder="¿Qué número miraré?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w1_metrica"></td><td class="px-4 py-2"><textarea rows="2" placeholder="¿Qué funcionó?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w1_reflexion"></textarea></td></tr>
+                <tr class="border-b"><td class="px-4 py-2 font-bold">2</td><td class="px-4 py-2"><input type="text" placeholder="Ej: Optimización de Anuncios" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w2_foco"></td><td class="px-4 py-2"><textarea rows="2" placeholder="Ej: 1. Analizar CTR. 2. Probar 2 nuevos públicos. 3. Ajustar presupuesto." class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w2_tareas"></textarea></td><td class="px-4 py-2"><input type="text" placeholder="¿Qué número miraré?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w2_metrica"></td><td class="px-4 py-2"><textarea rows="2" placeholder="¿Qué aprendimos?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w2_reflexion"></textarea></td></tr>
+                <tr class="border-b"><td class="px-4 py-2 font-bold">3</td><td class="px-4 py-2"><input type="text" placeholder="Ej: Crear contenido orgánico" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w3_foco"></td><td class="px-4 py-2"><textarea rows="2" placeholder="Ej: 1. Grabar 3 videos cortos. 2. Escribir 1 artículo de blog. 3. Publicar en redes." class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w3_tareas"></textarea></td><td class="px-4 py-2"><input type="text" placeholder="¿Qué número miraré?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w3_metrica"></td><td class="px-4 py-2"><textarea rows="2" placeholder="¿Qué gustó más?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w3_reflexion"></textarea></td></tr>
+                <tr><td class="px-4 py-2 font-bold">4</td><td class="px-4 py-2"><input type="text" placeholder="Ej: Revisión y Planificación" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w4_foco"></td><td class="px-4 py-2"><textarea rows="2" placeholder="Ej: 1. Revisar KPIs del mes. 2. Analizar feedback. 3. Planificar sprint siguiente." class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w4_tareas"></textarea></td><td class="px-4 py-2"><input type="text" placeholder="¿Qué número miraré?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w4_metrica"></td><td class="px-4 py-2"><textarea rows="2" placeholder="¿Qué mejoraremos?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w4_reflexion"></textarea></td></tr>
+            </tbody>
+        </table>
+    </div>`;
 
     // --- LÓGICA DE NAVEGACIÓN, AUTOSAVE Y PROGRESO ---
     const navLinks = document.querySelectorAll('.nav-link');
