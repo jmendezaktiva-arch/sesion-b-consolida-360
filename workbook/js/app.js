@@ -34,38 +34,38 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // --- INYECCIÓN DE CONTENIDO HTML ---
     
-    document.getElementById('diagnostico').innerHTML = `
-        <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[0].title}</h2>
-        <div class="instructions-box">
-            <p><strong>Objetivo:</strong> Realizar un diagnóstico para medir el nivel de madurez de tu ecosistema digital e identificar los 2 problemas de mayor impacto.</p>
-        </div>
-        <div class="overflow-x-auto bg-white p-6 rounded-lg shadow-sm border">
-            <h3 class="section-title">Mapa de Ecosistema Digital: Evalúa tu nivel actual</h3>
-            <table class="w-full min-w-[600px] text-sm text-left text-gray-500">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-100">
-                    <tr>
-                        <th class="px-6 py-3">Categoría</th>
-                        <th class="px-6 py-3 text-center">0 - Inexistente</th>
-                        <th class="px-6 py-3 text-center">1 - Básico</th>
-                        <th class="px-6 py-3 text-center">2 - Estructurado</th>
-                        <th class="px-6 py-3 text-center">3 - Optimizado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Presencia Orgánica</td><td class="px-6 py-4 text-center"><input type="radio" name="cat1" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat1" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat1" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat1" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat1" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat1" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat1" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat1" value="3"></td></tr>
-                    <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">SEO & Contenido</td><td class="px-6 py-4 text-center"><input type="radio" name="cat2" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat2" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat2" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat2" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat2" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat2" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat2" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat2" value="3"></td></tr>
-                    <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Captación Pagada (Ads)</td><td class="px-6 py-4 text-center"><input type="radio" name="cat3" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat3" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat3" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat3" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat3" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat3" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat3" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat3" value="3"></td></tr>
-                    <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Automatización</td><td class="px-6 py-4 text-center"><input type="radio" name="cat4" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat4" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat4" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat4" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat4" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat4" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat4" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat4" value="3"></td></tr>
-                    <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Comunidad</td><td class="px-6 py-4 text-center"><input type="radio" name="cat5" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat5" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat5" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat5" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat5" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat5" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat5" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat5" value="3"></td></tr>
-                    <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Prospección Manual</td><td class="px-6 py-4 text-center"><input type="radio" name="cat6" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat6" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat6" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat6" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat6" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat6" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat6" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat6" value="3"></td></tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-sm border mt-8">
-            <label for="diag_problemas" class="font-bold text-gray-700 mb-2 block">Basado en el diagnóstico, identifica tus 2 áreas de mayor oportunidad (las de menor puntuación):</label>
-            <textarea id="diag_problemas" rows="4" class="autosave-input w-full p-3 border border-gray-300 rounded-lg" data-section="diagnostico" data-id="diag_oportunidades"></textarea>
-        </div>
-    `;
+document.getElementById('diagnostico').innerHTML = `
+    <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[0].title}</h2>
+    <div class="instructions-box">
+        <p><strong>Objetivo:</strong> Realizar un diagnóstico para medir el nivel de madurez de tu ecosistema digital e identificar los 2 problemas de mayor impacto.</p>
+    </div>
+    <div class="overflow-x-auto bg-white p-6 rounded-lg shadow-sm border">
+        <h3 class="section-title">Mapa de Ecosistema Digital: Evalúa tu nivel actual</h3>
+        <table class="w-full min-w-[600px] text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                <tr>
+                    <th class="px-6 py-3">Categoría</th>
+                    <th class="px-6 py-3 text-center">0 - Inexistente</th>
+                    <th class="px-6 py-3 text-center">1 - Básico</th>
+                    <th class="px-6 py-3 text-center">2 - Estructurado</th>
+                    <th class="px-6 py-3 text-center">3 - Optimizado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Presencia Orgánica</td><td class="px-6 py-4 text-center"><input type="radio" name="cat1" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat1" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat1" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat1" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat1" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat1" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat1" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat1" value="3"></td></tr>
+                <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">SEO & Contenido</td><td class="px-6 py-4 text-center"><input type="radio" name="cat2" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat2" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat2" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat2" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat2" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat2" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat2" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat2" value="3"></td></tr>
+                <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Captación Pagada (Ads)</td><td class="px-6 py-4 text-center"><input type="radio" name="cat3" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat3" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat3" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat3" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat3" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat3" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat3" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat3" value="3"></td></tr>
+                <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Automatización</td><td class="px-6 py-4 text-center"><input type="radio" name="cat4" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat4" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat4" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat4" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat4" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat4" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat4" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat4" value="3"></td></tr>
+                <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Comunidad</td><td class="px-6 py-4 text-center"><input type="radio" name="cat5" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat5" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat5" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat5" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat5" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat5" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat5" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat5" value="3"></td></tr>
+                <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Prospección Manual</td><td class="px-6 py-4 text-center"><input type="radio" name="cat6" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat6" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat6" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat6" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat6" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat6" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat6" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat6" value="3"></td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-sm border mt-8">
+        <label for="diag_problemas" class="font-bold text-gray-700 mb-2 block">Basado en el diagnóstico, identifica tus 2 áreas de mayor oportunidad (las de menor puntuación):</label>
+        <textarea id="diag_problemas" rows="4" class="autosave-input w-full p-3 border border-gray-300 rounded-lg" data-section="diagnostico" data-id="diag_oportunidades" placeholder="Ej: 1. SEO y Contenido, porque no generamos tráfico. 2. Automatización, porque el seguimiento de leads es manual y lento."></textarea>
+    </div>
+`;
 
     document.getElementById('persona').innerHTML = `
         <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[1].title}</h2>
