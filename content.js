@@ -126,6 +126,10 @@ const slideContent = [
         content: `
       <p>Asegura una implementación <strong>exitosa</strong>.</p>
       <ul>
+        <li>Selecciona canales.</li>
+        <li>Crea set de contenido.</li>
+        <li>Configura punto de captura.</li>
+        <li>Define métricas y Excel de control.</li>
         <li>Da seguimiento a las sesiones semanales con tus colaboradores.</li>
         <li>Configura tu ecosistema digital.</li>
         <li>No faltes a la próxima sesión.</li>
