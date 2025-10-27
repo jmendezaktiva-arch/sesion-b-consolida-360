@@ -159,6 +159,7 @@ const slideContent = [
     }
   }
 
+    // Lámina Cierre
     {
     layout: 'layout-center-focus',
     title: 'Equipo Proactivo, Empresa Exitosa: De Tareas a Resultados',
