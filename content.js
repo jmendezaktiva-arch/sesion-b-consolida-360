@@ -5,9 +5,11 @@ const slideContent = [
 // Lámina 0: Inicio / Recepción (2 Min)
   {
     layout: 'layout-center-focus',
-    title: '¡Aterrizaje y Bienvenida!',
-    subtitle: 'Recepción y Preparación (2 Min)',
-    content: '<p>Asegúrate de que tu micrófono esté silenciado y tu cámara encendida.</p>'
+    title: 'Ecosistema Digital de VentasEcosistema de Ventas Digitales',
+        image: {
+      src: 'assets/images/Copia de slide-2.1.png', // Usando el logo que ya tienes
+      alt: 'Logo de Mi Empresa Crece'
+    }
   },
 
   // Lámina 1: Portada
@@ -156,9 +158,12 @@ const slideContent = [
   // Lámina Final: Cierre
   {
     layout: 'layout-center-focus',
-    title: '¡Fin de la Sesión B!',
-    subtitle: 'Próximos Pasos y Preparación para el Módulo 2',
-    content: '<p>Revisa tu Plan de Implementación para el Módulo 1 y agenda tu sesión de seguimiento.</p>'
+    title: 'Equipo Proactivo, Empresa Exitosa: De Tareas a Resultados',
+    subtitle: 'Gracias por su compromiso.',
+    image: {
+      src: 'assets/images/Copia de slide-2.1.png', // Mismo logo para consistencia
+      alt: 'Logo de Mi Empresa Crece'
+      }
   }
   
 ];
