@@ -2,16 +2,14 @@
 
 const slideContent = [
 
-  // Lámina de Inicio: Recepción (2 Min)
+// Lámina 0: Inicio / Recepción (2 Min)
   {
     layout: 'layout-center-focus',
-    title: 'Equipo Proactivo, Empresa Exitosa: De Tareas a Resultados',
-    image: {
-      src: 'assets/images/slide-2.1.png', // Usando el logo que ya tienes
-      alt: 'Logo de Mi Empresa Crece'
-    }
+    title: '¡Aterrizaje y Bienvenida!',
+    subtitle: 'Recepción y Preparación (2 Min)',
+    content: '<p>Asegúrate de que tu micrófono esté silenciado y tu cámara encendida.</p>'
   },
-  
+
   // Lámina 1: Portada
   {
     layout: 'layout-center-focus',
@@ -137,10 +135,6 @@ const slideContent = [
         content: `
       <p>Asegura una implementación <strong>exitosa</strong>.</p>
       <ul>
-        <li>Selecciona canales.</li>
-        <li>Crea set de contenido.</li>
-        <li>Configura punto de captura.</li>
-        <li>Define métricas y Excel de control.</li>
         <li>Da seguimiento a las sesiones semanales con tus colaboradores.</li>
         <li>Configura tu ecosistema digital.</li>
         <li>No faltes a la próxima sesión.</li>
@@ -157,17 +151,14 @@ const slideContent = [
         image: {
       src: 'assets/images/slide-19.png'
     }
-  }
+  },
 
-    // Lámina Cierre
-    {
+  // Lámina Final: Cierre
+  {
     layout: 'layout-center-focus',
-    title: 'Equipo Proactivo, Empresa Exitosa: De Tareas a Resultados',
-    subtitle: 'Gracias por su compromiso.',
-    image: {
-      src: 'assets/images/slide-2.1.png', // Mismo logo para consistencia
-      alt: 'Logo de Mi Empresa Crece'
-    }
+    title: '¡Fin de la Sesión B!',
+    subtitle: 'Próximos Pasos y Preparación para el Módulo 2',
+    content: '<p>Revisa tu Plan de Implementación para el Módulo 1 y agenda tu sesión de seguimiento.</p>'
   }
   
 ];
