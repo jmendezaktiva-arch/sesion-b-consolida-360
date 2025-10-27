@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 'plan', title: '5. Plan Maestro de Canal', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>` },
         { id: 'flujo', title: '6. Diseñador de Flujos', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12s2.545-5 7-5c4.455 0 7 5 7 5s-2.545 5-7 5c-4.455 0-7-5-7-5z"></path><path d="M12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path><path d="M20.599 16.5h-1.2a2 2 0 0 0-1.923 1.423l-.485 1.14a1 1 0 0 1-1.838-.78l.485-1.14a2 2 0 0 0-1.923-1.423h-1.2a2 2 0 0 0-1.923 1.423l-.485 1.14a1 1 0 0 1-1.838-.78l.485-1.14a2 2 0 0 0-1.923-1.423H4.4a1 1 0 0 1 0-2h1.199a2 2 0 0 0 1.923-1.423l.485-1.14a1 1 0 0 1 1.838.78l-.485 1.14a2 2 0 0 0 1.923 1.423h1.2a2 2 0 0 0 1.923-1.423l.485-1.14a1 1 0 0 1 1.838.78l-.485 1.14a2 2 0 0 0 1.923 1.423h1.2a1 1 0 0 1 0 2z"></path></svg>` },
         { id: 'sprint', title: '7. Sprint de Implementación', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>` },
+        { id: 'reporte', title: '8. Reporte Final', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>` },
     ];
 
     // --- GENERACIÓN DINÁMICA DE NAVEGACIÓN Y CONTENEDORES ---
@@ -188,6 +189,46 @@ document.getElementById('sprint').innerHTML = `
         </table>
     </div>`;
 
+    // --- CÓDIGO NUEVO A PEGAR EN app.js ---
+
+    document.getElementById('reporte').innerHTML = `
+        <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[7].title}</h2>
+        <div class="instructions-box">
+            <p><strong>Objetivo:</strong> Consolidar en una sola vista toda la información estratégica definida en el workbook para facilitar la toma de decisiones y la ejecución.</p>
+        </div>
+
+        <div class="mb-8 p-6 bg-white rounded-lg shadow-md border"><h3 class="text-2xl font-bold text-gray-800 mb-4">1. Diagnóstico y Oportunidades</h3><p class="text-gray-600 font-medium">Áreas de mayor oportunidad identificadas:</p><div id="reporte_oportunidades" class="mt-2 p-4 bg-gray-50 rounded-md whitespace-pre-wrap"></div></div>
+
+        <div class="mb-8 p-6 bg-white rounded-lg shadow-md border"><h3 class="text-2xl font-bold text-gray-800 mb-4">2. Perfil del Cliente Ideal</h3><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="bg-gray-50 p-4 rounded-md"><h4 class="font-bold text-gray-700">Datos Demográficos y Laborales:</h4><p id="reporte_perfil_retrato" class="mt-1 text-gray-600 whitespace-pre-wrap"></p></div><div class="bg-gray-50 p-4 rounded-md"><h4 class="font-bold text-gray-700">Metas y Desafíos:</h4><p id="reporte_perfil_mente" class="mt-1 text-gray-600 whitespace-pre-wrap"></p></div><div class="bg-gray-50 p-4 rounded-md"><h4 class="font-bold text-gray-700">Objeciones y Motivaciones:</h4><p id="reporte_perfil_corazon" class="mt-1 text-gray-600 whitespace-pre-wrap"></p></div><div class="bg-gray-50 p-4 rounded-md"><h4 class="font-bold text-gray-700">Plataformas y Contenidos:</h4><p id="reporte_perfil_habitat" class="mt-1 text-gray-600 whitespace-pre-wrap"></p></div></div></div>
+
+        <div class="mb-8 p-6 bg-white rounded-lg shadow-md border"><h3 class="text-2xl font-bold text-gray-800 mb-4">3. Clasificación de Canales Prioritarios</h3><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="p-4 bg-green-50 rounded-lg border border-green-200"><h4 class="font-bold text-green-700">Joyas de la Corona (Acción Inmediata):</h4><p id="reporte_matriz_q1" class="mt-1 text-gray-600 whitespace-pre-wrap"></p></div><div class="p-4 bg-red-50 rounded-lg border border-red-200"><h4 class="font-bold text-red-600">Proyectos Estratégicos (Planificar):</h4><p id="reporte_matriz_q2" class="mt-1 text-gray-600 whitespace-pre-wrap"></p></div><div class="p-4 bg-yellow-50 rounded-lg border border-yellow-200"><h4 class="font-bold text-yellow-700">Victorias Fáciles (Delegar/Automatizar):</h4><p id="reporte_matriz_q3" class="mt-1 text-gray-600 whitespace-pre-wrap"></p></div><div class="p-4 bg-gray-100 rounded-lg border border-gray-200"><h4 class="font-bold text-gray-700">Zonas Peligrosas (Evitar):</h4><p id="reporte_matriz_q4" class="mt-1 text-gray-600 whitespace-pre-wrap"></p></div></div></div>
+
+        <div class="p-6 bg-white rounded-lg shadow-md border"><h3 class="text-2xl font-bold text-gray-800 mb-4">4. Plan Maestro de Canales</h3><div class="grid grid-cols-1 md:grid-cols-2 gap-8"><div class="bg-gray-50 p-6 rounded-lg border space-y-3"><h4 class="text-lg font-bold text-gray-800">Plan para Canal Prioritario #1</h4><div><p class="font-semibold text-gray-700">Rol Estratégico:</p><p id="reporte_plan1_rol" class="p-2 bg-white rounded"></p></div><div><p class="font-semibold text-gray-700">Métrica Clave (KPI):</p><p id="reporte_plan1_kpi" class="p-2 bg-white rounded"></p></div><div><p class="font-semibold text-gray-700">Líneas de Contenido:</p><p id="reporte_plan1_contenido" class="p-2 bg-white rounded whitespace-pre-wrap"></p></div></div><div class="bg-gray-50 p-6 rounded-lg border space-y-3"><h4 class="text-lg font-bold text-gray-800">Plan para Canal Prioritario #2</h4><div><p class="font-semibold text-gray-700">Rol Estratégico:</p><p id="reporte_plan2_rol" class="p-2 bg-white rounded"></p></div><div><p class="font-semibold text-gray-700">Métrica Clave (KPI):</p><p id="reporte_plan2_kpi" class="p-2 bg-white rounded"></p></div><div><p class="font-semibold text-gray-700">Líneas de Contenido:</p><p id="reporte_plan2_contenido" class="p-2 bg-white rounded whitespace-pre-wrap"></p></div></div></div></div>
+    `;
+
+    function updateReport() {
+        const emptyText = 'Aún no definido.';
+        // 1. Oportunidades
+        document.getElementById('reporte_oportunidades').textContent = localStorage.getItem('sesionb_diag_oportunidades') || emptyText;
+        // 2. Perfil Cliente
+        document.getElementById('reporte_perfil_retrato').textContent = localStorage.getItem('sesionb_persona_retrato') || emptyText;
+        document.getElementById('reporte_perfil_mente').textContent = localStorage.getItem('sesionb_persona_mente') || emptyText;
+        document.getElementById('reporte_perfil_corazon').textContent = localStorage.getItem('sesionb_persona_corazon') || emptyText;
+        document.getElementById('reporte_perfil_habitat').textContent = localStorage.getItem('sesionb_persona_habitat') || emptyText;
+        // 3. Matriz
+        document.getElementById('reporte_matriz_q1').textContent = localStorage.getItem('sesionb_matriz_q1') || emptyText;
+        document.getElementById('reporte_matriz_q2').textContent = localStorage.getItem('sesionb_matriz_q2') || emptyText;
+        document.getElementById('reporte_matriz_q3').textContent = localStorage.getItem('sesionb_matriz_q3') || emptyText;
+        document.getElementById('reporte_matriz_q4').textContent = localStorage.getItem('sesionb_matriz_q4') || emptyText;
+        // 4. Plan Maestro
+        document.getElementById('reporte_plan1_rol').textContent = localStorage.getItem('sesionb_plan1_rol') || emptyText;
+        document.getElementById('reporte_plan1_kpi').textContent = localStorage.getItem('sesionb_plan1_kpi') || emptyText;
+        document.getElementById('reporte_plan1_contenido').textContent = localStorage.getItem('sesionb_plan1_contenido') || emptyText;
+        document.getElementById('reporte_plan2_rol').textContent = localStorage.getItem('sesionb_plan2_rol') || emptyText;
+        document.getElementById('reporte_plan2_kpi').textContent = localStorage.getItem('sesionb_plan2_kpi') || emptyText;
+        document.getElementById('reporte_plan2_contenido').textContent = localStorage.getItem('sesionb_plan2_contenido') || emptyText;
+    }
+
     // --- LÓGICA DE NAVEGACIÓN, AUTOSAVE Y PROGRESO ---
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.section-content');
@@ -229,6 +270,7 @@ document.getElementById('sprint').innerHTML = `
         document.getElementById('progress-bar').style.width = `${progress}%`;
     }
 
+// --- REEMPLAZAR ESTA FUNCIÓN COMPLETA ---
     function loadSavedData() {
         document.querySelectorAll('.autosave-input').forEach(input => {
             const savedValue = localStorage.getItem('sesionb_' + input.dataset.id);
@@ -241,49 +283,60 @@ document.getElementById('sprint').innerHTML = `
             }
         });
         checkCompletion();
+        updateReport(); // <-- Línea añadida
     }
 
+// --- REEMPLAZAR ESTE LISTENER COMPLETO ---
     mainContent.addEventListener('input', function(e) {
          if (e.target.classList.contains('autosave-input')) {
             const input = e.target;
             const valueToSave = (input.type === 'checkbox') ? input.checked : input.value;
             localStorage.setItem('sesionb_' + input.dataset.id, valueToSave);
             checkCompletion();
+            updateReport(); // <-- Línea añadida
          }
     });
+
+// --- REEMPLAZAR ESTE LISTENER COMPLETO ---
     mainContent.addEventListener('change', function(e) {
          if (e.target.classList.contains('autosave-input') && (e.target.type === 'radio' || e.target.tagName === 'SELECT')) {
             const input = e.target;
             localStorage.setItem('sesionb_' + input.dataset.id, input.value);
             checkCompletion();
+            updateReport(); // <-- Línea añadida
          }
     });
 
 // --- CÓDIGO A REEMPLAZAR EN app.js ---
 
 // --- EXPORTAR A PDF ---
+// REEMPLAZA LA FUNCIÓN COMPLETA DE EXPORTAR A PDF CON ESTO
+
 document.getElementById('export-pdf').addEventListener('click', function() {
     const { jsPDF } = window.jspdf;
-    const mainContent = document.getElementById('main-content');
+    // Objetivo modificado: ahora es solo la sección del reporte
+    const reportSection = document.getElementById('reporte'); 
     const loadingIndicator = document.getElementById('loading');
     const sections = document.querySelectorAll('.section-content');
     loadingIndicator.style.display = 'block';
 
+    // Guarda el estado actual de la vista para restaurarlo después
     const currentHash = window.location.hash || `#${sectionsData[0].id}`;
     const scrollX = window.scrollX;
     const scrollY = window.scrollY;
 
-    // Show all sections for a complete capture
-    sections.forEach(s => s.classList.add('active'));
+    // Modificación clave 1: Muestra SOLO la sección del reporte para la captura
+    sections.forEach(s => s.classList.toggle('active', s.id === 'reporte'));
     window.scrollTo(0, 0);
 
-    html2canvas(mainContent, {
-        scale: 2, // Higher scale for better quality
+    // Modificación clave 2: Apunta html2canvas únicamente a la sección del reporte
+    html2canvas(reportSection, {
+        scale: 2, // Mayor escala para mejor calidad
         useCORS: true,
-        windowWidth: mainContent.scrollWidth,
-        windowHeight: mainContent.scrollHeight,
+        windowWidth: reportSection.scrollWidth,
+        windowHeight: reportSection.scrollHeight,
     }).then(canvas => {
-        // Restore the view immediately after capture
+        // Restaura la vista original inmediatamente después de la captura
         showSection(currentHash);
         window.scrollTo(scrollX, scrollY);
         
@@ -291,36 +344,32 @@ document.getElementById('export-pdf').addEventListener('click', function() {
         const pdf = new jsPDF('p', 'mm', 'a4');
         
         const pdfWidth = pdf.internal.pageSize.getWidth();
-        const pdfHeight = pdf.internal.pageSize.getHeight();
-        
         const canvasWidth = canvas.width;
         const canvasHeight = canvas.height;
-        
-        // Calculate the ratio to maintain aspect ratio
         const ratio = canvasWidth / canvasHeight;
         const imgHeight = pdfWidth / ratio;
-
+        
         let heightLeft = imgHeight;
         let position = 0;
 
-        // Add the first page
         pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, imgHeight);
-        heightLeft -= pdfHeight;
+        heightLeft -= pdf.internal.pageSize.getHeight();
 
-        // Add new pages as long as there's content left
         while (heightLeft > 0) {
-            position = position - pdfHeight;
+            position = position - pdf.internal.pageSize.getHeight();
             pdf.addPage();
             pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, imgHeight);
-            heightLeft -= pdfHeight;
+            heightLeft -= pdf.internal.pageSize.getHeight();
         }
         
         const participantName = localStorage.getItem('sesionb_nombre_participante') || 'participante';
-        pdf.save(`Workbook_SesionB_${participantName}.pdf`);
+        // Nombre del archivo actualizado para reflejar el contenido
+        pdf.save(`ReporteFinal_SesionB_${participantName}.pdf`); 
         loadingIndicator.style.display = 'none';
     }).catch(err => {
         console.error("Error al generar el PDF:", err);
         loadingIndicator.style.display = 'none';
+        // Asegúrate de restaurar la vista también si hay un error
         showSection(currentHash);
         window.scrollTo(scrollX, scrollY);
     });
