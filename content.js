@@ -137,6 +137,11 @@ const slideContent = [
         content: `
       <p>Asegura una implementación <strong>exitosa</strong>.</p>
       <ul>
+        Seleccionar canales.
+        <li>Flujo Consultivo: Paso 2: Crear set de contenido.</li>
+        <li>Flujo Consultivo: Paso 3: Configurar punto de captura.</li>
+        <li>Flujo Consultivo: Paso 4: Definir métricas y Excel de control.</li>
+        <li>La sesión de feedback con el mentor es crucial para la Honestidad en la medición.</li>
         <li>Da seguimiento a las sesiones semanales con tus colaboradores.</li>
         <li>Configura tu ecosistema digital.</li>
         <li>No faltes a la próxima sesión.</li>
