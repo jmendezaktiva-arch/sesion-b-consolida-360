@@ -224,3 +224,11 @@
     transform: translateY(-3px); /* Efecto sutil al pasar el cursor */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+
+/* Añade esto al final de tu archivo custom.css */
+
+.slide-image {
+  width: 80%; /* Prueba ajustar este porcentaje (ej. 90%) */
+  height: auto; /* Mantiene la proporción correcta */
+  max-width: 900px; /* Opcional: un límite máximo en píxeles */
+}
