@@ -232,3 +232,21 @@
   height: auto; /* Mantiene la proporción correcta */
   max-width: 900px; /* Opcional: un límite máximo en píxeles */
 }
+
+/* ===== INICIO: Aumentar texto de diapositiva "Tareas" ===== */
+
+/* Esta diapositiva usa 'layout-center-focus' y el contenido
+   se inyecta en un 'div', por eso usamos esta regla */
+
+.layout-center-focus div p,
+.layout-center-focus div li {
+    font-size: 1.1em;  /* <-- Ajusta este valor (prueba 1.1em o 1.2em) */
+}
+
+.layout-center-focus div ul {
+    max-width: 80%;    /* Opcional: hace la lista un poco más ancha */
+    margin: 15px auto; /* Centra la lista */
+    text-align: left;  /* Asegura que el texto inicie a la izquierda */
+}
+
+/* ===== FIN: Aumentar texto de diapositiva "Tareas" ===== */
