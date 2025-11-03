@@ -90,7 +90,6 @@ const slideContent = [
   {
     layout: 'layout-center-focus',
     title: '¿Qué es el Ecosistema de Ventas Digitales?',
-    subtitle: 'La orquesta de canales que trabajan para ti',
     image: {
       src: 'assets/images/slide-8.png', // RUTA CORREGIDA: Usando el nombre real de tu archivo
       alt: 'Diagrama del ecosistema de ventas digitales'
